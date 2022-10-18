@@ -22,6 +22,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm install
     - run: npm run build:ui --if-present
-    - run: cd /home/ubuntu/actions-runner-Approvals/Approvals/Approvals/Approvals/uimodule/dist
-    - run: mv /home/ubuntu/actions-runner-Approvals/Approvals/Approvals/Approvals/uimodule/dist /home/ubuntu/actions-runner-Approvals/Approvals/Approvals/Approvals/uimodule/webapp
-    - run: sudo cp -avr /home/ubuntu/actions-runner-Approvals/Approvals/Approvals/Approvals/uimodule/webapp /var/www/html/Approvalsapp
+    - run: cd /home/ubuntu/actions-runner-Approvals/Approvals/approvals/DIGITALHUB/DIGITALHUB/uimodule/dist
+    - run: mv /home/ubuntu/actions-runner-Approvals/Approvals/approvals/DIGITALHUB/DIGITALHUB/uimodule/dist /home/ubuntu/actions-runner-Approvals/Approvals/Approvals/Approvals/uimodule/webapp
+    - run: sudo cp -avr /home/ubuntu/actions-runner-Approvals/approvals/DIGITALHUB/DIGITALHUB/uimodule/webapp /var/www/html/Approvalsapp
