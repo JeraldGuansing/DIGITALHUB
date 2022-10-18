@@ -1,0 +1,13 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog
+		title="Refund Type"
+		items="{oModel>/refund}"
+		search="handleSearchGL"
+    multiSelect="true"
+		confirm="onDialogClose"
+		cancel="onDialogClose">
+		<StandardListItem
+			title="{oModel>PrcName}"
+			description="{oModel>PrcCode}" />
+	</SelectDialog>
+</core:FragmentDefinition>

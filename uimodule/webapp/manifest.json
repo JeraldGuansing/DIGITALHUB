@@ -1,0 +1,439 @@
+{
+  "_version": "1.21.0",
+  "sap.app": {
+    "id": "com.apptech.DLSL",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "1.0.0"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}"
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "rootView": {
+      "viewName": "com.apptech.DLSL.view.Login",
+      "type": "XML",
+      "async": true,
+      "id": "app"
+    },
+    "dependencies": {
+      "minUI5Version": "1.60.0",
+      "libs": {
+        "sap.ui.core": {},
+        "sap.m": {},
+        "sap.ui.layout": {},
+        "sap.ui.unified":{}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.apptech.DLSL.i18n.i18n"
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "viewPath": "com.apptech.DLSL.view",
+        "controlId": "app",
+        "controlAggregation": "pages",
+        "async": true
+      },
+      "routes": [
+        {
+          "name": "Login",
+          "pattern": "Login",
+          "target": ["Login"]
+        },
+				{
+					"name": "Main",
+					"view": "Main",
+					"pattern": "Main",
+					"targetAggregation": "pages",
+					"controlId": "app"
+				},
+				{
+					"name": "Dashboard",
+					"pattern": "Dashboard",
+					"target": [
+						"Dashboard"
+					]
+				},
+        {
+          "name":"ApprovalProcess",
+          "pattern":"ApprovalProcess",
+          "target":[
+            "ApprovalProcess"
+          ]
+        },
+        {
+          "name":"ApprovalStagesAdd",
+          "pattern":"ApprovalStagesAdd",
+          "target":[
+            "ApprovalStagesAdd"
+          ]
+        },
+        {
+          "name":"ApprovalStagesUpdate",
+          "pattern":"ApprovalStagesUpdate",
+          "target":[
+            "ApprovalStagesUpdate"
+          ]
+        },
+        {
+          "name":"ApprovalTemplateAdd",
+          "pattern":"ApprovalTemplateAdd",
+          "target":[
+            "ApprovalTemplateAdd"
+          ]
+        },
+        {
+          "name":"ApprovalTemplateUpdate",
+          "pattern":"ApprovalTemplateUpdate",
+          "target":[
+            "ApprovalTemplateUpdate"
+          ]
+        },
+        {
+          "name":"PurchaseRequest",
+          "pattern":"PurchaseRequest",
+          "target":[
+            "PurchaseRequest"
+          ]
+        },
+        {
+          "name":"PaymentRequest",
+          "pattern":"PaymentRequest",
+          "target":[
+            "PaymentRequest"
+          ]
+        },
+        {
+          "name":"InventoryRequest",
+          "pattern":"InventoryRequest",
+          "target":[
+            "InventoryRequest"
+          ]
+        },
+        {
+          "name":"ApprovalDecision",
+          "pattern":"ApprovalDecision",
+          "target":[
+            "ApprovalDecision"
+          ]
+        },
+        {
+          "name":"ApprovalInquiry",
+          "pattern":"ApprovalInquiry",
+          "target":[
+            "ApprovalInquiry"
+          ]
+        },
+        {
+          "name":"ApprovalInquiryTree",
+          "pattern":"ApprovalInquiryTree",
+          "target":[
+            "ApprovalInquiryTree"
+          ]
+        },
+        {
+          "name":"RelationshipMap",
+          "pattern":"RelationshipMap",
+          "target":[
+            "RelationshipMap"
+          ]
+        },
+        {
+          "name":"PurchaseRequestInquiry",
+          "pattern":"PurchaseRequestInquiry",
+          "target":[
+            "PurchaseRequestInquiry"  
+          ]
+        },
+        {
+          "name":"PaymentRequestInquiry",
+          "pattern":"PaymentRequestInquiry",
+          "target":[
+            "PaymentRequestInquiry"
+          ]
+        },
+        {
+          "name":"InventoryRequestInquiry",
+          "pattern":"InventoryRequestInquiry",
+          "target":[
+            "InventoryRequestInquiry"
+          ]
+        },
+        {
+          "name":"PurchaseRequestView",
+          "pattern":"PurchaseRequestView",
+          "target":[
+            "PurchaseRequestView"
+          ]
+        },
+        {
+          "name":"PaymentRequestView",
+          "pattern":"PaymentRequestView",
+          "target":[
+            "PaymentRequestView"
+          ]
+        },
+        {
+          "name":"InventoryRequestView",
+          "pattern":"InventoryRequestView",
+          "target":[
+            "InventoryRequestView"
+          ]
+        },
+        {
+          "name":"ApprovalSubstitute",
+          "pattern":"ApprovalSubstitute",
+          "target":[
+            "ApprovalSubstitute"
+          ]
+        },
+        {
+          "name":"ErrorLog",
+          "pattern":"ErrorLog",
+          "target":[
+            "ErrorLog"
+          ]
+        }
+      ],
+      "targets": {
+        "Login": {
+          "viewType": "XML",
+          "viewLevel": 1,
+          "viewId": "app",
+          "viewName": "Login"
+        },
+        "Main": {
+					"viewType": "XML",
+					"viewName": "Main",
+					"viewLevel": 1
+				},
+				"Dashboard": {
+					"viewPath": "com.apptech.DLSL.view",
+					"viewType": "XML",
+					"viewName": "Dashboard",
+					"parent": "Main",
+					"controlId": "pageContainer",
+					"controlAggregation": "pages",
+					"viewLevel": 3
+				},
+        "ApprovalProcess":{
+          "viewPath":"com.apptech.DLSL.view.Approval",
+          "viewType":"XML",
+          "viewName":"ApprovalProcess",
+          "parent":"Main",
+          "controlId":"pageContainer",
+          "controlAggregation":"pages",
+          "viewLevel":"3"
+        },
+        "ApprovalStagesAdd":{
+          "viewPath":"com.apptech.DLSL.view.Approval",
+          "viewType":"XML",
+          "viewName":"ApprovalStagesAdd",
+          "parent":"Main",
+          "controlId":"pageContainer",
+          "controlAggregation":"pages",
+          "viewLevel":"3"
+        },
+        "ApprovalStagesUpdate":{
+          "viewPath":"com.apptech.DLSL.view.Approval",
+          "viewType":"XML",
+          "viewName":"ApprovalStagesUpdate",
+          "parent":"Main",
+          "controlId":"pageContainer",
+          "controlAggregation":"pages",
+          "viewLevel":"3"
+        },
+        "ApprovalTemplateAdd":{
+          "viewPath":"com.apptech.DLSL.view.Approval",
+          "viewType":"XML",
+          "viewName":"ApprovalTemplateAdd",
+          "parent":"Main",
+          "controlId":"pageContainer",
+          "controlAggregation":"pages",
+          "viewLevel":"3"
+        },
+        "ApprovalTemplateUpdate":{
+          "viewPath":"com.apptech.DLSL.view.Approval",
+          "viewType":"XML",
+          "viewName":"ApprovalTemplateUpdate",
+          "parent":"Main",
+          "controlId":"pageContainer",
+          "controlAggregation":"pages",
+          "viewLevel":"3"
+        },
+        "PurchaseRequest":{
+          "viewPath":"com.apptech.DLSL.view.Purchasing",
+          "viewType":"XML",
+          "viewName":"PurchaseRequest",
+          "parent":"Main",
+          "controlId":"pageContainer",
+          "controlAggregation":"pages",
+          "viewLevel":"3"
+        },
+        "PaymentRequest":{
+          "viewPath":"com.apptech.DLSL.view.PaymentRequest",
+          "viewType":"XML",
+          "viewName":"PaymentRequest",
+          "parent":"Main",
+          "controlId":"pageContainer",
+          "controlAggregation":"pages",
+          "viewLevel":"3"
+        },
+        "InventoryRequest":{
+          "viewPath":"com.apptech.DLSL.view.Inventory",
+          "viewType":"XML",
+          "viewName":"InventoryRequest",
+          "parent":"Main",
+          "controlId":"pageContainer",
+          "controlAggregation":"pages",
+          "viewLevel":"3"
+        },
+        "ApprovalDecision":{
+          "viewPath":"com.apptech.DLSL.view.Approval",
+          "viewType":"XML",
+          "viewName":"ApprovalDecision",
+          "parent":"Main",
+          "controlId":"pageContainer",
+          "controlAggregation":"pages",
+          "viewLevel":"3"
+        },
+        "ApprovalInquiry":{
+          "viewPath":"com.apptech.DLSL.view.Approval",
+          "viewType":"XML",
+          "viewName":"ApprovalInquiry",
+          "parent":"Main",
+          "controlId":"pageContainer",
+          "controlAggregation":"pages",
+          "viewLevel":"3"
+        },
+        "ApprovalInquiryTree":{
+          "viewPath":"com.apptech.DLSL.view.TransactionInquiry",
+          "viewType":"XML",
+          "viewName":"ApprovalInquiryTree",
+          "parent":"Main",
+          "controlId":"pageContainer",
+          "controlAggregation":"pages",
+          "viewLevel":"3"
+        },
+        "RelationshipMap":{
+          "viewPath":"com.apptech.DLSL.view.TransactionInquiry",
+          "viewType":"XML",
+          "viewName":"RelationshipMap",
+          "parent":"Main",
+          "controlId":"pageContainer",
+          "controlAggregation":"pages",
+          "viewLevel":"3"
+        },
+        "PurchaseRequestInquiry":{
+          "viewPath":"com.apptech.DLSL.view.Purchasing",
+          "viewType":"XML",
+          "viewName":"PurchaseRequestInquiry",
+          "parent":"Main",
+          "controlId":"pageContainer",
+          "controlAggregation":"pages",
+          "viewLevel":"3"
+        },
+        "PaymentRequestInquiry":{
+          "viewPath":"com.apptech.DLSL.view.PaymentRequest",
+          "viewType":"XML",
+          "viewName":"PaymentRequestInquiry",
+          "parent":"Main",
+          "controlId":"pageContainer",
+          "controlAggregation":"pages",
+          "viewLevel":"3"
+        },
+        "InventoryRequestInquiry":{
+          "viewPath":"com.apptech.DLSL.view.Inventory",
+          "viewType":"XML",
+          "viewName":"InventoryRequestInquiry",
+          "parent":"Main",
+          "controlId":"pageContainer",
+          "controlAggregation":"pages",
+          "viewLevel":"3"
+        },
+        "PurchaseRequestView":{
+          "viewPath":"com.apptech.DLSL.view.Purchasing",
+          "viewType":"XML",
+          "viewName":"PurchaseRequestView",
+          "parent":"Main",
+          "controlId":"pageContainer",
+          "controlAggregation":"pages",
+          "viewLevel":"3"
+        },
+        "PaymentRequestView":{
+          "viewPath":"com.apptech.DLSL.view.PaymentRequest",
+          "viewType":"XML",
+          "viewName":"PaymentRequestView",
+          "parent":"Main",
+          "controlId":"pageContainer",
+          "controlAggregation":"pages",
+          "viewLevel":"3"
+        },
+        "InventoryRequestView":{
+          "viewPath":"com.apptech.DLSL.view.Inventory",
+          "viewType":"XML",
+          "viewName":"InventoryRequestView",
+          "parent":"Main",
+          "controlId":"pageContainer",
+          "controlAggregation":"pages",
+          "viewLevel":"3"
+        },
+        "ApprovalSubstitute":{
+          "viewPath":"com.apptech.DLSL.view.Approval",
+          "viewType":"XML",
+          "viewName":"ApprovalSubstitute",
+          "parent":"Main",
+          "controlId":"pageContainer",
+          "controlAggregation":"pages",
+          "viewLevel":"3"
+        },
+        "ErrorLog":{
+          "viewPath":"com.apptech.DLSL.view",
+          "viewType":"XML",
+          "viewName":"ErrorLog",
+          "parent":"Main",
+          "controlId":"pageContainer",
+          "controlAggregation":"pages",
+          "viewLevel":"3"
+        }
+      }
+    }
+  }
+}

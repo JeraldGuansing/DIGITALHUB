@@ -1,0 +1,54 @@
+{
+    "ApprovalInquiryRecords": [],
+    "FilterCB": "",
+    "FilterDocType":"",
+    "Filters": [
+        {
+          "Code": "All",
+          "Name": "All"
+        },
+        {
+            "Code": "Approved",
+            "Name": "Approved"
+        },
+        {
+            "Code": "Pending",
+            "Name": "Pending"
+        },
+        {
+            "Code": "Rejected",
+            "Name": "Rejected"
+        }
+    ],
+    "DocType":[
+        {
+            "Code":"Purchase Request",
+            "Name":"Purchase Request"
+        },
+        {
+            "Code":"Payment Request",
+            "Name":"Payment Request"
+        },
+        {
+            "Code":"Inventory Request",
+            "Name":"Inventory Request"
+        }
+    ],
+    "DateFrom":"",
+    "DateTo":"",
+    "Controls":true,
+    "DocTypeTree":[
+        {
+            "Code":"APP_OPRQ",
+            "Name":"Purchase Request"
+        },
+        {
+            "Code":"APP_ORFP",
+            "Name":"Payment Request"
+        },
+        {
+            "Code":"APP_OIVR",
+            "Name":"Inventory Request"
+        }
+    ]
+}

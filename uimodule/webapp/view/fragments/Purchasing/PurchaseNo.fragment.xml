@@ -1,0 +1,14 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog
+		title="Purchase Request"
+		items="{oModel>/PurchaseRequestRecords}"
+		search="handleSearchPR"
+		confirm="handleValueClosePR"
+    cancel="OpenAddScreen">
+		<StandardListItem
+			title="{oModel>No}"
+			description="" 
+      info="{oModel>Status}"
+      infoState="{oModel>InfoState}"/>
+	</SelectDialog>
+</core:FragmentDefinition>

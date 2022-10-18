@@ -1,0 +1,73 @@
+
+<mvc:View controllerName="com.apptech.DLSL.controller.Approval.ApprovalStagesAdd"
+	xmlns:core="sap.ui.core" 
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns="sap.m"  
+    xmlns:f="sap.ui.layout.form"
+	xmlns:l="sap.ui.layout" 
+    xmlns:t="sap.ui.table"
+    xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Approval Stages" id="">
+        <content>
+            <f:SimpleForm layout="ResponsiveGridLayout" width="100%">
+                <f:content>
+                    <OverflowToolbar design="Solid">
+                        <Button text="Add Record" press="onAddRecord"/>
+                        <ToolbarSpacer/>
+                        <Button text="Back" press="OnBack"/>
+                    </OverflowToolbar>
+                    <Label text="Stage Name" width="100%">
+                         <layoutData>
+                                <l:GridData span="L4 M4 S12"/>
+                        </layoutData>
+                    </Label>
+                    <Input required="true" editable="true" value="{oModel>/ApprovalStages/StageName}" width="100%">
+                         <layoutData>
+                                <l:GridData span="L6 M6 S12"/>
+                        </layoutData>
+                    </Input>
+                    <Label text="Description" width="100%">
+                         <layoutData>
+                                <l:GridData span="L4 M4 S12"/>
+                        </layoutData>
+                    </Label>
+                    <Input required="true" editable="true" value="{oModel>/ApprovalStages/Description}" width="100%">
+                         <layoutData>
+                                <l:GridData span="L6 M6 S12"/>
+                        </layoutData>
+                    </Input>
+                </f:content>
+            </f:SimpleForm>
+            <Toolbar height="1px"/>
+            <t:Table
+                id="ApprovalStagesTBL"
+                selectionMode="Single"
+                visibleRowCountMode="Auto"
+                rows="{oModel>/ApprovalStages/Items}">
+                    <t:extension>
+                        <OverflowToolbar>
+                             <Button text="Add Row" press="OnAddRow"/>
+                             <Button text="Delete Row" press="OnDeleteRow"/>
+                        </OverflowToolbar>
+                    </t:extension>
+                    <t:columns>
+                        <t:Column>
+                            <Label text="Authorizer"/>
+                                <t:template>
+                                    <Input id="authorizer" value="{oModel>AuthorizerName}" valueHelpOnly="true" showValueHelp="true" valueHelpRequest="handleValueHelpUsers"/>
+                                </t:template>
+                        </t:Column>
+                        <t:Column>
+                            <Label text="Department"/>
+                                <t:template>
+                                  <Input id="DeptOrg" editable="false" value="{oModel>Name}"/>
+                                    <!-- <ComboBox width="100%" value="{oModel>Department}" items="{oModel>/Department}">
+                                        <core:ListItem key="{oModel>Code}" text="{oModel>Name}"/>
+                                    </ComboBox> -->
+                                </t:template>
+                        </t:Column>
+                    </t:columns>
+            </t:Table>
+        </content>
+	</Page>
+</mvc:View>  

@@ -1,0 +1,87 @@
+{
+    "navigation": [
+        {
+            "title": "ADMINISTRATION",
+            "icon": "sap-icon://company-view",
+            "expanded": true,
+            "key": "administration",
+            "items": [
+                {
+                    "title": "Approval Process",
+                    "key": "approvalprocess"
+                },
+                {
+                    "title": "Approval Decision",
+                    "key": "approvaldecision"
+                },
+                {
+                    "title": "Approval Inquiry",
+                    "key": "approvalinquiry"
+                }
+            ]
+        },
+        {
+            "title": "PROCUREMENT",
+            "icon": "sap-icon://documents",
+            "expanded": true,
+            "key": "purchasing",
+            "items": [
+                {
+                    "title": "Procurement Request",
+                    "key": "purchaserequest"
+                }
+            ]
+        },
+        {
+            "title": "PAYMENT",
+            "icon": "sap-icon://documents",
+            "expanded": true,
+            "key": "paymentrequest",
+            "items": [
+                {
+                    "title": "Payment Request",
+                    "key": "paymentrequestitem"
+                }
+            ]
+        },
+        {
+            "title": "INVENTORY",
+            "icon": "sap-icon://documents",
+            "expanded": true,
+            "key": "inventory",
+            "items": [
+                {
+                    "title": "Inventory Request",
+                    "key": "inventoryrequest"
+                }
+            ]
+        },
+        {
+          "title": "FAQs",
+          "icon": "sap-icon://travel-request",
+          "expanded": true,
+          "key": "FAQs",
+          "items": [
+              {
+                  "title": "Frequently Asked Questions",
+                  "key": ""
+              },
+              {
+                "title": "Video Tutorials",
+                "key": ""
+              },
+              {
+                "title": "Contact Us",
+                "key": ""
+              }
+          ]
+      },
+      {
+        "title": "LOGOUT",
+        "icon": "sap-icon://log",
+        "expanded": true,
+        "key": "Logout"
+      }
+
+    ]
+}

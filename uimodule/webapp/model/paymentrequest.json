@@ -1,0 +1,58 @@
+{
+    "PaymentRequest":{
+        "No":"",
+        "RequesterCode":"",
+        "RequesterName":"",
+        "PositionCode":"",
+        "DepartmentCode":"",
+        "DepartmentName":"",
+        "RequestDate":"",
+        "RequiredDate":"",
+        "Payee":"",
+        "PayeeName":"",
+        "StatusCode":"",
+        "Remarks":"",
+        "Draft":"",
+        "AttachmentEntry":"",
+        "Items":[]
+
+    },
+    "PaymentRequestRecords":[],
+    "PaymentRequestInquiryRecords":[],
+    "Controls":{
+        "AddOrEdit":"Submit for approval"
+    },
+    "isEnabled":false,
+    "Users":[],
+    "Department":[],
+    "Positions":[],
+    "Status":[{
+        "Code":"O",
+        "Name":"Open"
+    },{
+        "Code":"C",
+        "Name":"Closed"
+    }],
+    "Items":[],
+    "GL":[],
+    "FundType":[],
+    "Program":[],
+    "Dept":[],
+    "Div":[],
+    "DeptAll":[],
+    "DivAll":[],
+    "Employee":[],
+    "UOM":[],
+    "TaxCode":[],
+    "Warehouse":[],
+    "Payee":[],
+    "LoanType": [],
+    "Attachments": [],
+    "TaxLiable":[{
+        "Code":"tYES",
+        "Name":"Yes"
+    },{
+        "Code":"tNo",
+        "Name":"No"
+    }]
+}

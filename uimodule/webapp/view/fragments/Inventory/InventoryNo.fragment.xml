@@ -1,0 +1,14 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog
+		title="Inventory Request"
+		items="{oModel>/InventoryRequestRecords}"
+		search="handleSearchINV"
+		confirm="handleValueCloseINV"
+    cancel="OpenAddScreen">
+		<StandardListItem
+			title="{oModel>RequesterName}"
+			description="{oModel>No}" 
+      info="{oModel>Status}"
+      infoState="{oModel>InfoState}"/>
+	</SelectDialog>
+</core:FragmentDefinition>

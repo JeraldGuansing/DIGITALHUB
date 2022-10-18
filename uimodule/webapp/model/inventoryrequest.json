@@ -1,0 +1,47 @@
+{
+    "InventoryRequest":{
+        "No":"",
+        "RequesterCode":"",
+        "RequesterName":"",
+        "PositionCode":"",
+        "DepartmentCode":"",
+        "DepartmentName":"",
+        "RequestDate":"",
+        "RequiredDate":"",
+        "StatusCode":"",
+        "Remarks":"",
+        "JONum":"",
+        "Draft":"",
+        "AttachmentEntry":"",
+        "Items":[]
+
+    },
+    "InventoryRequestRecords":[],
+    "InventoryRequestInquiryRecords":[],
+    "Controls":{
+        "AddOrEdit":"Submit for approval"
+    },
+    "isEnabled":true,
+    "Users":[],
+    "Department":[],
+    "Positions":[],
+    "Status":[{
+        "Code":"O",
+        "Name":"Open"
+    },{
+        "Code":"C",
+        "Name":"Closed"
+    }],
+    "Items":[],
+    "GL":[],
+    "FundType":[],
+    "Program":[],
+    "Dept":[],
+    "Div":[],
+    "Employee":[],
+    "UOM":[],
+    "TaxCode":[],
+    "Warehouse":[],
+    "Type":[],
+    "Attachments": []
+}

@@ -1,0 +1,12 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog
+		title="UOM"
+		items="{oModel>/UOM}"
+		search="handleSearchUOM"
+		confirm="handleValueCloseUOM"
+		cancel="">
+		<StandardListItem
+			title="{oModel>UomName}"
+			description="{oModel>UomCode}" />
+	</SelectDialog>
+</core:FragmentDefinition>

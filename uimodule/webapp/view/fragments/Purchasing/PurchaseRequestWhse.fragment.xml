@@ -1,0 +1,11 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog
+		title="Warehouse"
+		items="{oModel>/Warehouse}"
+		search="handleSearchWhse"
+		confirm="handleValueCloseWhse">
+		<StandardListItem
+			title="{oModel>WhsCode}"
+			description="{oModel>WhsName}" />
+	</SelectDialog>
+</core:FragmentDefinition>

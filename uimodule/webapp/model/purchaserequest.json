@@ -1,0 +1,53 @@
+{
+    "PurchaseRequest":{
+        "No":"",
+        "RequesterCode":"",
+        "RequesterName":"",
+        "PositionCode":"",
+        "DepartmentCode":"",
+        "DepartmentName":"",
+        "RequestDate":"",
+        "RequiredDate":"",
+        "StatusCode":"",
+        "Remarks":"",
+        "Draft":"",
+        "AttachmentEntry":"",
+        "Items":[]
+
+    },
+    "PurchaseRequestRecords":[],
+    "PurchaseReqAttachment": {
+      "Attachments2_Lines":[]
+    },
+    "PurchaseRequestInquiryRecords":[],
+    "Controls":{
+        "AddOrEdit":"Submit for approval"
+    },
+    "isEnabled":true,
+    "Users":[],
+    "Department":[],
+    "Positions":[],
+    "Status":[{
+        "Code":"O",
+        "Name":"Open"
+    },{
+        "Code":"C",
+        "Name":"Closed"
+    }],
+    "Items":[],
+    "Specialist":[],
+    "GL":[],
+    "FundType":[],
+    "Program":[],
+    "Dept":[],
+    "Div":[],
+    "DeptAll":[],
+    "DivAll":[],
+    "Employee":[],
+    "UOM":[],
+    "Vendor":[],
+    "TaxCode":[],
+    "Warehouse":[],
+    "Attachments": [],
+    "UploadAttachment": []
+}

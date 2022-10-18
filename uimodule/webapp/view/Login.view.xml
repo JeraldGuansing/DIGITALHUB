@@ -1,0 +1,93 @@
+<mvc:View controllerName="com.apptech.DLSL.controller.Login"
+	xmlns:mvc="sap.ui.core.mvc" 
+  displayBlock="true" 
+  xmlns="sap.m" 
+  xmlns:f="sap.ui.layout.form" 
+  xmlns:core="sap.ui.core" 
+  xmlns:l="sap.ui.layout" >
+		<App id="app" width="100%"  class="sapUiSizeCompact">
+			<pages>
+				<Page width="100%" title="APPTECH EXPERTS INC" id="pageLogin" busyIndicatorDelay="500">
+					<content>
+						<f:SimpleForm    columnsXL="2" columnsL="2" columnsM="2" editable="true" id="form1" layout="ResponsiveGridLayout" width="100%">
+							<f:content>
+								<Image  width="auto" src="./resources/img/logo.png">
+								<layoutData>
+									<l:GridData  span="L8 M8 S12"/>
+								</layoutData>
+								</Image>
+								 
+								 <Panel headerText="Login" xmlns="sap.m" class="sapUiResponsiveContentPadding sapUiSmallMarginTop" width="auto" expandable="false" expanded="false" id="panel0">
+									<layoutData>
+										<l:GridData span="L4 M4 S12"/>
+									</layoutData>
+								
+									<!-- <headerToolbar>
+										<Toolbar id="toolbar1">
+											<Title text="Login"/>
+											<ToolbarSpacer/>
+										</Toolbar>
+									</headerToolbar> -->
+									<f:SimpleForm editable="true" layout="ResponsiveGridLayout" id="form0" width="auto">
+										<f:content>
+											<Label text="Username" width="auto" id="label0">
+												<layoutData>
+													<l:GridData span="L2 M4 S12"/>
+												</layoutData>
+											</Label>
+											<Input width="auto"  id="Username" required="true">
+												<layoutData>
+													<l:GridData span="L10 M8 S12"/>
+												</layoutData>
+											</Input>
+											<Label text="Password" width="auto" id="label1">
+												<layoutData>
+													<l:GridData span="L2 M4 S12"/>
+												</layoutData>
+											</Label>
+											<Input width="auto" id="Password" type="Password" required="true">
+												<layoutData>
+													<l:GridData span="L10 M8 S12"/>
+												</layoutData>
+											</Input>
+											<Label text="Database" width="auto" id="label00">
+												<layoutData>
+													<l:GridData span="L2 M4 S12"/>
+												</layoutData>
+											</Label>
+											<Select id="selectDatabase"  items="{oMdlDatabase>/Database}" selectedKey=""  showSecondaryValues="true" enabled="true">
+												<core:ListItem key="{oMdlDatabase>NAME}" text="{oMdlDatabase>NAME} - {oMdlDatabase>COMPANYNAME} "/>
+												<layoutData>
+													<l:GridData span="L10 M8 S12"/>
+												</layoutData>
+											</Select>
+											<Label text="" width="auto" id="label12">
+												<layoutData>
+													<l:GridData span="L2 M4 S12"/>
+												</layoutData>
+											</Label>
+											<Button xmlns="sap.m" text="Login" id="button3" icon="sap-icon://visits" iconFirst="false" type="Accept" press="onLogin" xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" action:wiring="\{'press':\{'navigation':\{'routeName':'Main'\}\}\}">
+												<layoutData>
+													<l:GridData span="L12 M8 S12"/>
+												</layoutData>
+											</Button>
+
+											<Link text="Change Password" press="onChangePassword" id="forgotid"/>
+											<!-- <Link text="fragmet to open" press="callFragment"/> -->
+										</f:content>
+									</f:SimpleForm>
+									<content/>
+								</Panel>
+						
+							</f:content> 
+						 </f:SimpleForm>
+					</content>
+          <footer>
+            <Bar>
+             
+            </Bar>
+          </footer>
+				</Page>
+			</pages>
+		</App>
+</mvc:View>

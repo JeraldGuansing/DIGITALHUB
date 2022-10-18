@@ -1,0 +1,11 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog
+		title="Payee"
+		items="{oModel>/Payee}"
+		search="handleSearchPayee"
+		confirm="handleValueClosePayee">
+		<StandardListItem
+			title="{oModel>CardName}"
+			description="{oModel>U_EmployeeCode}" />
+	</SelectDialog>
+</core:FragmentDefinition>

@@ -1,0 +1,12 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog
+		title="Users"
+		items="{oModel>/Users}"
+		search="handleSearchUsers"
+		confirm="handleValueCloseUsers"
+		cancel="">
+		<StandardListItem
+			title="{oModel>UserName}"
+			description="{oModel>UserCode}" />
+	</SelectDialog>
+</core:FragmentDefinition>

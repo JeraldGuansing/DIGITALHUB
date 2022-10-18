@@ -1,0 +1,11 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog
+		title="Department/Prgram"
+		items="{oModel>/Dept}"
+		search="handleSearchDepartment"
+		confirm="handleValueCloseDepartment">
+		<StandardListItem
+			title="{oModel>PrcName}"
+			description="{oModel>PrcCode}" />
+	</SelectDialog>
+</core:FragmentDefinition>

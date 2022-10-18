@@ -1,0 +1,83 @@
+{
+    "ApprovalTemplates":{
+        "Name":"",
+        "Description":"",
+        "Status":"",
+        "Originator":[],
+        "Documents":[],
+        "Stages":[],
+        "Terms":[]
+    },
+    "Users":[],
+    "Department":[],
+    "Stages":[],
+    "Documents":[
+        {
+            "Document":"Purchase Request"
+        },
+        {
+            "Document":"Payment Request"
+        },
+        {
+            "Document":"Inventory Request"
+        }
+    ],
+    "Ratios":[{
+        "Code":">",
+        "Name":"Greater Than"
+    },
+    {
+        "Code":">=",
+        "Name":"Greater or Equal"
+    },
+    {
+        "Code":"<",
+        "Name":"Less Than"
+    },
+    {
+        "Code":"<=",
+        "Name":"Less or Equal"
+    },
+    {
+        "Code":"=",
+        "Name":"Equal"
+    },
+    {
+        "Code":"<>",
+        "Name":"Does Not Equal"
+    },
+    {
+      "Code":"IN",
+      "Name":"IN"
+    },
+    {
+        "Code":"BT",
+        "Name":"Between"
+    }],
+    "Terms":[{
+        "Term":"Total Document"
+    },
+    {
+      "Term":"Department"
+    },
+    {
+      "Term":"GL Account"
+    },
+    {
+        "Term":"Specialist"
+    },
+    {
+      "Term":"Depository"
+    }],
+    "Status":[
+        {
+            "Code":"A",
+            "Name":"Active"
+        },
+        {
+            "Code":"I",
+            "Name":"Inactive"
+        }
+    ]
+
+}

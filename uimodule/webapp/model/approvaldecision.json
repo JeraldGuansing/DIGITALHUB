@@ -1,0 +1,38 @@
+{
+    "ApprovalDecisionRecords": [],
+    "ApprovalDecisionNotif": [],
+    "FilterCB": "",
+    "Filters": [
+        {
+          "Code": "All",
+          "Name": "All"
+        },
+        {
+            "Code": "Approved",
+            "Name": "Approved"
+        },
+        {
+            "Code": "Pending",
+            "Name": "Pending"
+        },
+        {
+            "Code": "Rejected",
+            "Name": "Rejected"
+        }
+    ],
+    "Controls":true,
+    "DocType":[
+      {
+          "Code":"Purchase Request",
+          "Name":"Purchase Request"
+      },
+      {
+          "Code":"Payment Request",
+          "Name":"Payment Request"
+      },
+      {
+          "Code":"Inventory Request",
+          "Name":"Inventory Request"
+      }
+  ]
+}

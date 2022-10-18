@@ -1,0 +1,11 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog
+		title="Employee Type"
+		items="{oModel>/LoanType}"
+		search="handleSearchLoanType"
+		confirm="handleValueCloseLoanType">
+		<StandardListItem
+			title="{oModel>Name}"
+			description="{oModel>Code}" />
+	</SelectDialog>
+</core:FragmentDefinition>

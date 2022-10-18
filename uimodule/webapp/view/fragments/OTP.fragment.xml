@@ -1,0 +1,23 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form">
+    <Dialog title="Change Password">
+        <content>
+            <Panel xmlns="sap.m" class="sapUiResponsiveContentPadding" width="auto" expandable="false" expanded="true">
+                <Input type="Email" visible="true" id="UserEmailID" placeholder="Please Enter Email Address"/>	
+                <Input visible="false" id="OTPR" placeholder="Enter OTP Code"/>
+                <!-- <Input visible="false" id="OldPassword" type="Password" placeholder="Enter Current Password"/> -->
+                <Input visible="false" id="NPassword" type="Password" placeholder="Enter Password"/>
+                <Input visible="false" id="CPassword" type="Password" placeholder="Enter Confirm Password"/>
+            </Panel>
+        </content>
+        <beginButton>
+            <Button text="Cancel" icon="sap-icon://sys-cancel" press="onCloseFP" type="Reject"/>
+        </beginButton>
+        <endButton>
+            <Button id="OTPButton" text="Enter" icon="sap-icon://accept" press="onFunc" type="Accept" />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

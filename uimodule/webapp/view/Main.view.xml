@@ -1,0 +1,66 @@
+<core:View 
+controllerName="com.apptech.DLSL.controller.Main"
+height="100%"
+xmlns:core="sap.ui.core" 
+xmlns:mvc="sap.ui.core.mvc" 
+xmlns="sap.m" 
+xmlns:chart="sap.suite.ui.microchart"
+xmlns:f="sap.f" 
+xmlns:l="sap.ui.layout"
+xmlns:tnt="sap.tnt"
+xmlns:html="http://www.w3.org/1999/xhtml">
+	<tnt:ToolPage id="toolPage">
+		<tnt:header>
+			<f:ShellBar id="ShellID" title="APPTECH" class="sapFShellBar" secondTitle="" showMenuButton="true" homeIconPressed="onIconPress" homeIcon="./resources/img/Apptech.PNG"  showCopilot="false"
+				menuButtonPressed="onMenuButtonPress" showProductSwitcher="false">
+				<f:additionalContent>
+					<Button id="userName" icon="sap-icon://customer"  type="Transparent" press="">
+						<layoutData>
+							<OverflowToolbarLayoutData priority="NeverOverflow" />
+						</layoutData>
+					</Button>
+				</f:additionalContent>
+			</f:ShellBar>
+		</tnt:header>
+		<tnt:sideContent>
+			<tnt:SideNavigation expanded="true" selectedKey="" itemSelect="onItemSelect">
+				<tnt:NavigationList id="navigationList">
+				  <tnt:NavigationListItem id="AdminNav" visible="false" expanded="false" select="onRootItemSelect" text="Home" icon="sap-icon://company-view">
+            <tnt:NavigationListItem id="AP" visible="false" select="onApprovalProcess" text="Approval Process" />
+            <tnt:NavigationListItem id="SA" visible="false" select="onApprovalSubstitute" text="Approver Substitute" />
+            <tnt:NavigationListItem id="AD" visible="false" select="onApprovalDecision" text="Approval Decision" />
+            <tnt:NavigationListItem id="AI" visible="false" select="onapprovalinquiry" text="Approval Inquiry" />
+            <tnt:NavigationListItem id="TI" visible="false" select="onTransactionTree" text="Transaction Inquiry" />
+          </tnt:NavigationListItem>
+
+          <tnt:NavigationListItem id="ProcurementNav" visible="false" expanded="false" select="onRootItemSelect" text="Procurement" icon="sap-icon://documents">
+            <tnt:NavigationListItem select="onpurchaserequest" text="Procurement Request" />
+          </tnt:NavigationListItem>
+
+          <tnt:NavigationListItem id="PaymentNav" visible="false" expanded="false" select="onRootItemSelect" text="Payment" icon="sap-icon://accounting-document-verification">
+            <tnt:NavigationListItem select="onpaymentrequestitem" text="Payment Request" />
+          </tnt:NavigationListItem>
+
+          <tnt:NavigationListItem id="InventoryNav" visible="false" expanded="false" select="onRootItemSelect" text="Inventory" icon="sap-icon://activity-items">
+            <tnt:NavigationListItem select="oninventoryrequest" text="Inventory Request" />
+          </tnt:NavigationListItem>
+
+          <tnt:NavigationListItem id="FAQNav" expanded="false" select="onRootItemSelect" text="FAQs" icon="sap-icon://travel-request">
+              <tnt:NavigationListItem text="Frequently Asked Questions" />
+              <tnt:NavigationListItem text="Video Tutorials" />
+              <tnt:NavigationListItem text="Contact Us" />
+          </tnt:NavigationListItem>
+		  <tnt:NavigationListItem id="NavErrorLog" select="Errorlogs" text="Error Log" icon="sap-icon://multi-select"/>
+          <tnt:NavigationListItem select="onLogout" text="Logout" icon="sap-icon://log"/>
+				</tnt:NavigationList>
+			</tnt:SideNavigation>
+		</tnt:sideContent>
+		<tnt:mainContents>
+			<NavContainer id="pageContainer">
+				<pages>
+				 
+				</pages>
+			</NavContainer>
+		</tnt:mainContents>
+	</tnt:ToolPage>
+</core:View> 

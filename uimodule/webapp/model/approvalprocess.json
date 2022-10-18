@@ -1,0 +1,14 @@
+{
+    "ApprovalStages":[],
+    "ApprovalTemplates":[],
+    "Status":[
+        {
+            "Code":"A",
+            "Value":"Active"
+        },
+        {
+            "Code":"I",
+            "Value":"Inactive"
+        }
+    ]
+}

@@ -1,0 +1,68 @@
+
+<mvc:View controllerName="com.apptech.DLSL.controller.ErrorLog"
+xmlns:core="sap.ui.core" 
+xmlns:mvc="sap.ui.core.mvc" 
+xmlns="sap.m"  
+xmlns:f="sap.ui.layout.form"
+xmlns:l="sap.ui.layout" 
+xmlns:t="sap.ui.table"
+xmlns:html="http://www.w3.org/1999/xhtml">
+<Page title="Error Log" enableScrolling="false"> 
+    <content>
+                <Panel height="90%">
+                <t:Table
+                    id="ErrorLogTBL"
+                    selectionMode="MultiToggle"
+                    rowSelectionChange="onSelectionChange"
+                    visibleRowCountMode="Auto"
+                    visibleRowCount= "10"
+                    enableSelectAll="false"
+                    rows="{oModel>/ApprovalDecisionRecords}">
+                    <t:columns>
+                        <t:Column width="8em" filterProperty="DocumentNumber">
+                          <Label text="Document No"/>
+                              <t:template>
+                                <Link text="{oModel>No}" href="{ProductPicUrl}" press="ViewRecord"/>
+                              </t:template>
+                        </t:Column>
+
+                        <t:Column width="10em">
+                            <Label text="Document Type"/>
+                                <t:template>
+                                    <Input enabled="false" value=""/>
+                                </t:template>
+                        </t:Column>
+
+                        <t:Column width="9rem" >
+                            <Label text="Creator"/>
+                                <t:template>
+                                    <Input enabled="false" value=""/>
+                                </t:template>
+                          </t:Column>
+
+                          <t:Column width="7rem">
+                            <Label text="Date"/>
+                                <t:template>
+                                    <Input enabled="false" value=""/>
+                                </t:template>
+                        </t:Column>
+
+                        <t:Column width="20rem">
+                          <Label text="Error Description"/>
+                              <t:template>
+                                <Input enabled="false" value=""/>
+                              </t:template>
+                        </t:Column>
+
+                        <t:Column width="20rem">
+                        <Label text="Transactions"/>
+                            <t:template>
+                                <Input enabled="false" value=""/>
+                            </t:template>
+                        </t:Column>
+                    </t:columns>
+                </t:Table>
+            </Panel>
+    </content>                   
+</Page>
+</mvc:View>  

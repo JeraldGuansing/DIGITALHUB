@@ -1,0 +1,11 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog
+		title="Specialist"
+		items="{oModel>/Specialist}"
+		search="handleSearchSLP"
+		confirm="handleValueCloseCondition"
+		cancel="handleValueCloseCondition">
+		<StandardListItem
+			title="{oModel>ItmsGrpNam}"/>
+	</SelectDialog>
+</core:FragmentDefinition>

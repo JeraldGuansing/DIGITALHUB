@@ -1,0 +1,93 @@
+
+<mvc:View controllerName="com.apptech.DLSL.controller.TransactionInquiry.ApprovalInquiryTree"
+  xmlns:core="sap.ui.core" 
+  xmlns:mvc="sap.ui.core.mvc" 
+  xmlns:m="sap.m"
+  xmlns:u="sap.ui.unified"  
+  xmlns:f="sap.ui.layout.form"
+  xmlns:l="sap.ui.layout" 
+  xmlns="sap.ui.table"
+  xmlns:html="http://www.w3.org/1999/xhtml">
+<m:Page title="Transaction Inquiry" id="TRID">
+  <m:content>
+        <m:OverflowToolbar>
+          <m:ComboBox id="doctype" change="onFilter" width="25%" value="{oModel>/FilterDocType}" items="{oModel>/DocTypeTree}">
+            <core:ListItem key="{oModel>Code}" text="{oModel>Name}"/>                                              
+              <m:layoutData>
+                <l:GridData span="L2 M2 S4"/>
+              </m:layoutData>
+          </m:ComboBox>
+            <m:Label text="Date From"/>
+            <m:Input id="datefrom" width="15%" value="{oModel>/DateFrom}" type="Date" change="OnDateRange"/>
+            <m:Label text="Date To"/>
+            <m:Input id="dateto" width="15%" value="{oModel>/DateTo}" type="Date" change="OnDateRange"/>
+            <m:Button text="Clear Date Range" press="cleardate"/>
+            <!-- <m:Button text="Relationship Map" press="onRelationShipMap"/> -->
+        </m:OverflowToolbar>   
+        <m:Panel>
+        <TreeTable id="TreeTable" visibleRowCount="19"  selectionMode="MultiToggle" enableSelectAll="false" ariaLabelledBy="title"
+          rows="{path:'oModel>/PurchaseRequestRecords', parameters: {arrayNames:['DocLine']}}">
+                  <columns>
+                    <Column width="9rem">
+                      <m:Label text="Document No."/>
+                      <template>
+                        <m:Text text="{oModel>No}" wrapping="false"/>
+                      </template>
+                    </Column>
+
+                    <Column width="8rem">
+                      <m:Label text="Status"/>
+                      <template>
+                        <m:ObjectStatus class="sapUiSmallMarginBottom" textAlign="Center" text="{oModel>Status}" inverted="true" state="{oModel>State}" />
+                        <!-- <m:Text text="{oModel>Status}" wrapping="false"/> -->
+                      </template>
+                    </Column>
+
+                    <Column width="9rem">
+                      <m:Label text="Document Type"/>
+                      <template>
+                        <m:Text text="{oModel>DocumentType}" wrapping="false"/>
+                      </template>
+                    </Column>
+
+                    <Column width="8rem">
+                      <m:Label text="Request Date"/>
+                      <template>
+                        <m:Text text="{oModel>RequestDate}" wrapping="false"/>
+                      </template>
+                    </Column>
+
+                    <Column width="8rem">
+                      <m:Label text="Required Date"/>
+                      <template>
+                        <m:Text text="{oModel>RequiredDate}" wrapping="false"/>
+                      </template>
+                    </Column>
+
+                    <Column width="8rem">
+                      <m:Label text="SAP Document"/>
+                      <template>
+                        <m:Text text="{oModel>SAP}" wrapping="false"/>
+                      </template>
+                    </Column>
+
+                    <Column width="7rem">
+                      <m:Label text="Originator"/>
+                      <template>
+                        <m:Text text="{oModel>RequesterName}" wrapping="false"/>
+                      </template>
+                    </Column>
+
+                    <Column width="16rem">
+                      <m:Label text="Remarks"/>
+                      <template>
+                        <m:Text text="{oModel>Remarks}" wrapping="false"/>
+                      </template>
+                    </Column>
+
+          </columns>
+      </TreeTable>
+    </m:Panel>
+  </m:content>         
+</m:Page>
+</mvc:View>  

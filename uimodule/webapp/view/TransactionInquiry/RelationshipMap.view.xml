@@ -1,0 +1,91 @@
+<mvc:View
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:m="sap.m"
+	xmlns="sap.suite.ui.commons"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	controllerName="com.apptech.DLSL.controller.TransactionInquiry.RelationshipMap">
+  <m:Page showHeader="false">
+	<m:Panel>
+		<m:FlexBox height="100%" renderType="Bare">
+			<ProcessFlow id="processflow1" nodePress="onNodePress">
+				<nodes>
+					<ProcessFlowNode
+						nodeId="1"
+						laneId="id0"
+						title="Sales Order 1"
+						titleAbbreviation="SO 1"
+						isTitleClickable="false"
+						children="2,11,12"
+						state="Positive"
+						stateText="Positive Status"
+						texts="" />
+					<ProcessFlowNode
+						nodeId="2"
+						laneId="id1"
+						title="Delivery 13"
+						titleAbbreviation="DD 1"
+						isTitleClickable="false"
+						children="10"
+						state="Positive"
+						stateText="OK Delivery"
+						texts="this is delivery document" />
+					<ProcessFlowNode
+						nodeId="10"
+						laneId="id3"
+						title="Accounting Document 7"
+						titleAbbreviation="AD 7"
+						isTitleClickable="false"
+						state="PlannedNegative"
+						stateText="Planned Negative"
+						texts="text 1 runs over two rows but no  more than two" />
+					<ProcessFlowNode
+						nodeId="11"
+						laneId="id2"
+						title="Invoice 4"
+						titleAbbreviation="INV 4"
+						isTitleClickable="false"
+						state="Negative"
+						stateText="Negative Status should not run over more than two rows of text" />
+					<ProcessFlowNode
+						nodeId="12"
+						laneId="id2"
+						title="Invoice 5"
+						titleAbbreviation="INV 5"
+						isTitleClickable="false"
+						children="5"
+						state="Neutral" />
+					<ProcessFlowNode
+						nodeId="5"
+						laneId="id3"
+						title="Accounting Document 10"
+						titleAbbreviation="AD 10"
+						state="Planned" />
+				</nodes>
+				<lanes>
+					<ProcessFlowLaneHeader
+						laneId="id0"
+						iconSrc="sap-icon://order-status"
+						text="Purchase Request"
+						position="0" />
+					<ProcessFlowLaneHeader
+						laneId="id1"
+						iconSrc="sap-icon://monitor-payments"
+						text="Purchase Order"
+						position="1" />
+					<ProcessFlowLaneHeader
+						laneId="id2"
+						iconSrc="sap-icon://payment-approval"
+						text="Goods Receipt PO"
+						position="2" />
+					<ProcessFlowLaneHeader
+						laneId="id3"
+						iconSrc="sap-icon://money-bills"
+						text="AP Invoice"
+						position="3" />
+            
+				</lanes>
+			</ProcessFlow>
+		</m:FlexBox>
+	</m:Panel>
+</m:Page>
+</mvc:View>

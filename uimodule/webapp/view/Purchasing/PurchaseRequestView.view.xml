@@ -1,0 +1,296 @@
+<View controllerName="com.apptech.DLSL.controller.Purchasing.PurchaseRequestView" 
+xmlns:core="sap.ui.core" 
+xmlns:mvc="sap.ui.core.mvc" 
+xmlns="sap.m" 
+xmlns:f="sap.ui.layout.form"
+xmlns:l="sap.ui.layout" 
+xmlns:t="sap.ui.table" 
+xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Purchase Request" id="">
+		<content>
+			<f:SimpleForm layout="ResponsiveGridLayout" width="100%">
+				<f:content>
+					<OverflowToolbar design="Solid" class="sapUiSmallMarginTop">
+						<Button text="Back" press="onNavBack" />
+                        <Button id="PreviewBtn" text="Preview" press="onPreview"/>
+					</OverflowToolbar>
+					<Label text="No" width="100%">
+						<layoutData>
+							<l:GridData span="L2 M2 S12" />
+						</layoutData>
+					</Label>
+					<Input id="PRNo" editable="false" value="{oModel>/PurchaseRequest/No}" width="50%">
+						<layoutData>
+							<l:GridData span="L4 M4 S12" />
+						</layoutData>
+					</Input>
+					<Label text="Requester" width="100%">
+						<layoutData>
+							<l:GridData span="L2 M2 S12" />
+						</layoutData>
+					</Label>
+					<Input required="true" editable="false" value="{oModel>/PurchaseRequest/RequesterName}" width="50%" valueHelpOnly="true" showValueHelp="true" valueHelpRequest="handleValueHelpUsers">
+						<layoutData>
+							<l:GridData span="L4 M4 S12" />
+						</layoutData>
+					</Input>
+					<!-- <Label text="Position" width="100%">
+						<layoutData>
+							<l:GridData span="L2 M2 S12" />
+						</layoutData>
+					</Label>
+					<ComboBox id="position" width="50%" editable="false" value="{oModel>/PurchaseRequest/PositionCode}" items="{oModel>/Positions}">
+						<core:ListItem key="{oModel>Code}" text="{oModel>Name}" />
+						<layoutData>
+							<l:GridData span="L4 M4 S12" />
+						</layoutData>
+					</ComboBox> -->
+					<Label text="Department" width="100%">
+						<layoutData>
+							<l:GridData span="L2 M2 S12" />
+						</layoutData>
+					</Label>
+					<Input required="true" editable="false" value="{oModel>/PurchaseRequest/DepartmentName}" width="50%" valueHelpOnly="true" showValueHelp="true" valueHelpRequest="handleValueHelpDept">
+						<layoutData>
+							<l:GridData span="L4 M4 S12" />
+						</layoutData>
+					</Input>
+					<Label text="Request Date" width="100%">
+						<layoutData>
+							<l:GridData span="L2 M2 S12" />
+						</layoutData>
+					</Label>
+					<Input required="true" editable="false" type="Date" value="{oModel>/PurchaseRequest/RequestDate}" width="50%">
+						<layoutData>
+							<l:GridData span="L4 M4 S12" />
+						</layoutData>
+					</Input>
+					<Label text="Required Date" width="100%">
+						<layoutData>
+							<l:GridData span="L2 M2 S12" />
+						</layoutData>
+					</Label>
+					<Input required="true" editable="false" type="Date" value="{oModel>/PurchaseRequest/RequiredDate}" width="50%">
+						<layoutData>
+							<l:GridData span="L4 M4 S12" />
+						</layoutData>
+					</Input>
+					<Label text="Status" width="100%">
+						<layoutData>
+							<l:GridData span="L2 M2 S12" />
+						</layoutData>
+					</Label>
+					<ComboBox id="status" editable="false" width="50%" value="{oModel>/PurchaseRequest/StatusName}" items="{oModel>/Status}">
+						<core:ListItem key="{oModel>Code}" text="{oModel>Name}" />
+						<layoutData>
+							<l:GridData span="L4 M4 S12" />
+						</layoutData>
+					</ComboBox>
+
+                <Label visible="false" text="Attach file(s)" width="100%">
+                    <layoutData>
+                            <l:GridData span="L2 M2 S12"/>
+                    </layoutData>
+                </Label>
+
+                <Link visible="false"  id="AttachID" press="onViewAttachment" width="75%">
+                    <layoutData>
+                            <l:GridData span="L4 M2 S12"/>
+                    </layoutData>
+                </Link>
+
+                <Label text="Remarks" width="100%">
+                    <layoutData>
+                            <l:GridData span="L2 M2 S12"/>
+                    </layoutData>
+                </Label>
+
+                <TextArea editable="false" value="{oModel>/PurchaseRequest/Remarks}" width="80%" >
+                    <layoutData>
+                            <l:GridData span="L4 M2 S12"/>
+                    </layoutData>
+                </TextArea>
+				</f:content>
+			</f:SimpleForm>
+      
+         <IconTabBar id="Tab1" headerMode="Inline" expandable="false" class="SAPFiori">
+         <items class="SAPFiori">
+            <IconTabFilter id="ContentID" class="SAPFiori" text="Content" key="ItemContent">
+                <content class="SAPFiori">     
+      
+                            <t:Table id="PurchaseRequestItems" selectionMode="MultiToggle" rowSelectionChange="onSelectionChange"
+                            enableSelectAll="false" rows="{oModel>/PurchaseRequest/Items}">    
+                                <t:columns>
+                                    <t:Column width="8rem">
+                                        <Label text="Item Code" required="true"/>
+                                            <t:template>
+                                                <Input id="itemcode" editable="{oModel>/isEnabled}" value="{oModel>ItemCode}" valueHelpOnly="true" showValueHelp="true" valueHelpRequest="handleValueHelpItems"/>
+                                            </t:template>
+                                    </t:Column>
+                                    <t:Column width="8rem">
+                                        <Label text="SAP Item Description"/>
+                                            <t:template>
+                                                <Input id="description" editable="{oModel>/isEnabled}" value="{oModel>Description}" width="100%"/>
+                                            </t:template>
+                                    </t:Column>
+
+                                    <t:Column width="7rem"> 
+                                        <Label text="Specific Details"/>
+                                            <t:template>
+                                                <Input id="notes" editable="{oModel>/isEnabled}" value="{oModel>Notes}" width="100%"/>
+                                            </t:template>
+                                    </t:Column>
+
+                                    <t:Column width="7rem">
+                                        <Label text="Quantity" required="true"/>
+                                            <t:template>
+                                                <Input id="quantity" editable="{oModel>/isEnabled}" type="Number" value="{oModel>Quantity}" change="OnComputeAmount" width="100%"/>
+                                            </t:template>
+                                    </t:Column>
+
+                                    
+                                    <t:Column width="7rem">
+                                        <Label text="UOM" required="true"/>
+                                            <t:template>
+                                                <Input id="uom" editable="{oModel>/isEnabled}" value="{oModel>UOM}" showValueHelp="true" valueHelpRequest="handleValueHelpUOM" width="100%" />
+                                            </t:template>
+                                    </t:Column>
+                                    <t:Column width="7rem">
+                                        <Label text="Unit Price"/>
+                                            <t:template>
+                                                <Input id="estunitprice" editable="{oModel>/isEnabled}" value="{oModel>EstUnitPrice}" change="OnComputeAmount" width="100%"/>
+                                            </t:template>
+                                    </t:Column>
+                                    <t:Column width="7rem">
+                                        <Label text="Amount"/>
+                                            <t:template>
+                                                <Input id="estamount" editable="false" value="{oModel>EstAmount}" width="100%"/>
+                                            </t:template>
+                                    </t:Column>
+                                    <t:Column width="10rem">
+                                        <Label text="Budget/Fund Available"/>
+                                            <t:template>
+                                                <Input id="budgetavailable" editable="{oModel>/isEnabled}" type="Number" value="{oModel>BudgetAvailable}" width="100%"/>
+                                            </t:template>
+                                    </t:Column>
+
+                                    <t:Column width="7rem">
+                                        <Label text="Department"/>
+                                            <t:template>
+                                                <Input id="department" editable="{oModel>/isEnabled}" value="{oModel>Department}" valueHelpOnly="true" showValueHelp="true" valueHelpRequest="handleValueHelpDepartment" width="100%"/>
+                                            </t:template>
+                                    </t:Column>
+
+                                    <t:Column width="7rem">
+                                    <Label text="Division/Depository"/>
+                                        <t:template>
+                                            <Input id="division" editable="{oModel>/isEnabled}" value="{oModel>Division}" valueHelpOnly="true" showValueHelp="true" valueHelpRequest="handleValueHelpDiv" width="100%"/>
+                                        </t:template>
+                                    </t:Column> 
+
+                                    
+                                    <t:Column width="7rem">
+                                        <Label text="Vendor"/>
+                                            <t:template>
+                                                <Input id="vendor" editable="{oModel>/isEnabled}" value="{oModel>Vendor}" showValueHelp="true" valueHelpRequest="handleValueHelpVendor" width="100%"/>
+                                            </t:template>
+                                    </t:Column>
+
+                                    <t:Column width="7rem">
+                                        <Label text="GL Account"/>
+                                            <t:template>
+                                                <Input id="glaccount" editable="{oModel>/isEnabled}" value="{oModel>GlAccount}" valueHelpOnly="true" showValueHelp="true" valueHelpRequest="handleValueHelpGL" width="100%"/>
+                                            </t:template>
+                                    </t:Column>
+                                    <t:Column width="7rem">
+                                        <Label text="Fund Type"/>
+                                            <t:template>
+                                                <Input id="fundtype" editable="{oModel>/isEnabled}" value="{oModel>FundType}" valueHelpOnly="true" showValueHelp="true" valueHelpRequest="handleValueHelpFundType" width="100%"/>
+                                            </t:template>
+                                    </t:Column>
+                                    
+                                    <t:Column width="8rem">
+                                        <Label text="Specialist Code"/>
+                                            <t:template>
+                                                <Input id="specialistcode" editable="{oModel>/isEnabled}" value="{oModel>SpecialistCode}" valueHelpOnly="true" showValueHelp="true" valueHelpRequest="handleValueHelpSpecialist" width="100%"/>
+                                            </t:template>
+                                    </t:Column>
+
+                                    <t:Column width="7rem">
+                                        <Label text="Directorate/College"/>
+                                            <t:template>
+                                                <Input id="program" editable="{oModel>/isEnabled}" value="{oModel>Program}" showValueHelp="true" valueHelpRequest="handleValueHelpProgram" width="100%"/>
+                                            </t:template>
+                                    </t:Column>
+                                
+                                    <t:Column width="7rem">
+                                        <Label text="Employee/Others"/>
+                                            <t:template>
+                                                <Input id="employee" editable="{oModel>/isEnabled}" value="{oModel>Employee}" showValueHelp="true" valueHelpRequest="handleValueHelpEmployee" width="100%"/>
+                                            </t:template>
+                                    </t:Column>
+                                    
+                                    <t:Column width="7rem">
+                                        <Label text="Whse"/>
+                                            <t:template>
+                                                <Input id="warehouse" editable="{oModel>/isEnabled}" value="{oModel>Warehouse}" showValueHelp="true" valueHelpRequest="handleValueHelpWhse" width="100%"/>
+                                            </t:template>
+                                    </t:Column>
+
+                                    <t:Column width="7rem">
+                                        <Label text="Type"/>
+                                            <t:template>
+                                                <Input id="type" editable="{oModel>/isEnabled}" value="{oModel>Type}" width="100%"/>
+                                            </t:template>
+                                    </t:Column>
+
+                                    <t:Column width="7rem">
+                                        <Label text="Tax Code"/>
+                                            <t:template>
+                                                <Input id="taxcode" editable="{oModel>/isEnabled}" value="{oModel>TaxCode}" showValueHelp="true" valueHelpRequest="handleValueHelpTaxCode" width="100%"/>
+                                            </t:template>
+                                    </t:Column>
+                                </t:columns>
+                            </t:Table>     
+                 </content>
+                </IconTabFilter>
+
+            <IconTabFilter id="AttachmentID" class="SAPFiori" text="Attachment" key="AttachmentContent">
+                <content class="SAPFiori">
+                               <t:Table  id="InventoryRequestAttach"
+                                selectionMode="MultiToggle"
+                                  visibleRowCount="8"
+                                rowSelectionChange="onSelectionChange1"
+                                enableSelectAll="false"
+                                rows="{oModel>/Attachments}">
+                                    <t:columns>
+                                         <t:Column width="30%">
+                                            <Label text="File Name" required="true"/>
+                                                <t:template>
+                                                    <Link editable="false"   press="onViewAttachment"  text="{oModel>FileName}"/>
+                                                </t:template>
+                                        </t:Column>
+
+                                         <t:Column width="8rem">
+                                            <Label text="Attachment Date" required="true"/>
+                                                <t:template>
+                                                    <Input editable="false" value="{oModel>AttachmentDate}"/>
+                                                </t:template>
+                                        </t:Column>
+
+                                         <t:Column width="8rem">
+                                            <Label text="Free Text" required="true"/>
+                                                <t:template>
+                                                    <Input editable="true" value="{oModel>FreeText}"/>
+                                                </t:template>
+                                        </t:Column>
+                                </t:columns>
+                            </t:Table>
+
+                </content>
+                </IconTabFilter>
+            </items>
+        </IconTabBar>         
+		</content>
+	</Page>
+</View>

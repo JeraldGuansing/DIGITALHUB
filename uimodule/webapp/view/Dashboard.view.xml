@@ -1,0 +1,156 @@
+<mvc:View controllerName="com.apptech.DLSL.controller.Dashboard"
+	xmlns:core="sap.ui.core" 
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns="sap.m"  
+    xmlns:f="sap.f"
+	  xmlns:l="sap.ui.layout" 
+    xmlns:html="http://www.w3.org/1999/xhtml">
+    <Page showHeader="false" class="page2BgImg">
+      <IconTabBar id="iddash" headerMode="Inline" expanded="false" class="SAPFiori">
+        <items class="SAPFiori">
+
+          <IconTabFilter id="AdminTab" visible="false" class="SAPFiori" text="Home" key="Administrator">
+            <content class="SAPFiori">
+              
+              <GenericTile id="DASHAP" visible="false" header="Approval Process" press="onApprovalProcess" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" subheader="">
+                  <TileContent unit="">
+                    <NumericContent id="dashApprovalProcess" value="0" icon="sap-icon://approvals" withMargin="false" />
+                  </TileContent>
+              </GenericTile>
+             
+              <GenericTile id="DASHAD" visible="false" header="Approval Decision" press="onApprovalDecion" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" subheader="">
+                <TileContent unit="">
+                  <NumericContent id="dashApprovalDecision" value="0" icon="sap-icon://decision" withMargin="false" />
+                </TileContent>
+              </GenericTile>
+
+              <GenericTile id="DASHAI" visible="false" header="Approval Inquiry" press="onApprovalInQuiry" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" subheader="">
+                <TileContent unit="">
+                  <NumericContent id="dashApprovalInquiry" value="0" icon="sap-icon://bell" withMargin="false" />
+                </TileContent>
+              </GenericTile>
+
+              <GenericTile id="DASHPR" visible="false" header="Approval Inquiry" press="onApprovalInQuiry" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" subheader="">
+                <TileContent unit="">
+                  <NumericContent id="dashApprovalInquiryPR" value="0" icon="sap-icon://bell" withMargin="false" />
+                </TileContent>
+              </GenericTile>
+
+              <GenericTile id="DASHPM" visible="false" header="Approval Inquiry" press="onApprovalInQuiry" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" subheader="">
+                <TileContent unit="">
+                  <NumericContent id="dashApprovalInquiryPM" value="0" icon="sap-icon://bell" withMargin="false" />
+                </TileContent>
+              </GenericTile>
+
+              <GenericTile id="DASHIN" visible="false" header="Approval Inquiry" press="onApprovalInQuiry" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" subheader="">
+                <TileContent unit="">
+                  <NumericContent id="dashApprovalInquiryIN" value="0" icon="sap-icon://bell" withMargin="false" />
+                </TileContent>
+              </GenericTile>
+
+
+              <!-- <SlideTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout">
+                <GenericTile
+                  backgroundImage="resources/img/cybersale.jpg"
+                  frameType="TwoByOne">
+                  <TileContent unit="" footer="">
+                    <NewsContent
+                      contentText=""
+                      subheader="" />
+                  </TileContent>
+                </GenericTile>
+
+                <GenericTile
+                backgroundImage="resources/img/dls-lipa.jpg"
+                  frameType="TwoByOne" press="press">
+                  <TileContent unit="" footer="">
+                    <NewsContent
+                      contentText=""
+                      subheader="" />
+                  </TileContent>
+                </GenericTile>
+
+                <GenericTile
+                backgroundImage="resources/img/images.jfif"
+                  frameType="TwoByOne" press="press">
+                  <TileContent unit="" footer="">
+                    <NewsContent
+                      contentText=""
+                      subheader="" />
+                  </TileContent>
+                </GenericTile>
+              </SlideTile>
+              
+              <SlideTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout">
+                <GenericTile
+                  backgroundImage="resources/img/payment.jpg"
+                  frameType="TwoByOne">
+                  <TileContent unit="" footer="">
+                    <NewsContent
+                      contentText=""
+                      subheader="" />
+                  </TileContent>
+                </GenericTile>
+
+                <GenericTile
+                backgroundImage="resources/img/images1.jfif"
+                  frameType="TwoByOne" press="press">
+                  <TileContent unit="" footer="">
+                    <NewsContent
+                      contentText=""
+                      subheader="" />
+                  </TileContent>
+                </GenericTile>
+
+                <GenericTile
+                backgroundImage="resources/img/image2.jfif"
+                  frameType="TwoByOne" press="press">
+                  <TileContent unit="" footer="">
+                    <NewsContent
+                      contentText=""
+                      subheader="" />
+                  </TileContent>
+                </GenericTile>
+              </SlideTile> -->
+            </content>
+          </IconTabFilter>
+          
+          <IconTabFilter id="ProcTabID" visible="false" text="Procurement" key="Procurement">
+            <content>
+                  <GenericTile  id="DASHPRV" header="Procurement Request" press="handleValueHelpPurchaseRequest" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" subheader="">
+                      <TileContent unit="">
+                        <NumericContent id="dashProcurement" value="0" icon="sap-icon://approvals" withMargin="false" />
+                      </TileContent>
+                  </GenericTile>
+            </content>
+          </IconTabFilter>
+          
+          <IconTabFilter id="PayTabID" visible="false" text="Payment" key="Payment">
+            <content>
+              <GenericTile header="Payment Request" press="handleValueHelpPM" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" subheader="">
+                <TileContent unit="">
+                  <NumericContent id="dashPayment" value="0" icon="sap-icon://approvals" withMargin="false" />
+                </TileContent>
+            </GenericTile>
+            </content>
+          </IconTabFilter>
+
+        <IconTabFilter id="InvTabID" visible="false" text="Inventory" key="Inventory">
+          <content>
+            <GenericTile header="Inventory Request" press="handleValueHelpINV" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" subheader="">
+              <TileContent unit="">
+                <NumericContent id="dashInventory" value="0" icon="sap-icon://approvals" withMargin="false" />
+              </TileContent>
+          </GenericTile>
+          </content>
+       </IconTabFilter>
+
+        <!-- <IconTabFilter text="FAQ's" key="FAQ's">
+          <content>
+          </content>
+       </IconTabFilter> -->
+
+        </items>
+      </IconTabBar>
+    </Page>
+</mvc:View>  

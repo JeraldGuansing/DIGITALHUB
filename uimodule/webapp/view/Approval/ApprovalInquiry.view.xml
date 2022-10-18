@@ -1,0 +1,138 @@
+
+<mvc:View controllerName="com.apptech.DLSL.controller.Approval.ApprovalInquiry"
+  xmlns:core="sap.ui.core" 
+  xmlns:mvc="sap.ui.core.mvc" 
+  xmlns:m="sap.m"
+  xmlns:u="sap.ui.unified"  
+  xmlns:f="sap.ui.layout.form"
+  xmlns:l="sap.ui.layout" 
+  xmlns="sap.ui.table"
+  xmlns:html="http://www.w3.org/1999/xhtml">
+	<m:Page title="Approval Inquiry" id="">
+              <m:content>
+                      <m:OverflowToolbar>
+                        <m:ComboBox id="filters" width="12%" value="{oModel>/FilterCB}" items="{oModel>/Filters}">
+                          <core:ListItem key="{oModel>Code}" text="{oModel>Name}"/>                                              
+                        </m:ComboBox>
+                        <m:ComboBox id="doctype" width="12%" value="{oModel>/FilterDocType}" items="{oModel>/DocType}">
+                            <core:ListItem key="{oModel>Code}" text="{oModel>Name}"/>                                              
+                        </m:ComboBox>
+                        
+                        <m:Label text="Date From"/>
+                        <m:Input id="datefrom" width="12%" placeHolder="Select Date From" type="Date" change=""/>
+                        <m:Label text="Date To"/>
+                        <m:Input id="dateto" width="12%" value="Select Date To" type="Date" change=""/>
+                        <m:Button text="Filter" press="onFilter"/>
+                        <m:Button text="Clear" press=""/>
+                       
+                      </m:OverflowToolbar>
+                    
+                    <TreeTable id="approvalinquiry"  enableCellFilter="true" 
+                    filter="filterInquiry" visibleRowCountMode="Auto" selectionMode="MultiToggle" enableSelectAll="false" ariaLabelledBy="title"
+                    rows="{path:'oModel>/ApprovalInquiryRecords', parameters: {arrayNames:['DocLine']}}">
+                    <columns>
+                              <Column width="8rem" filterProperty="No">
+                                <m:Label text="Document No"/>
+                                <template>
+                                  <m:Link text="{oModel>No}"
+                                    href="{ProductPicUrl}"
+                                    press="ViewRecord"/>
+                                </template>
+                              </Column>
+          
+                              <Column width="9rem">
+                                <m:Label text="Status"/>
+                                <template>
+                                  <m:ObjectStatus class="sapUiSmallMarginBottom" text="{oModel>Status}" inverted="true" state="{oModel>State}" />
+                                </template>
+                              </Column>
+          
+                              <Column width="20rem">
+                                <m:Label text="Details"/>
+                                <template>
+                                  <m:Text text="{oModel>Notes}" wrapping="true"/>
+                                </template>
+                              </Column>
+          
+                              <Column id="ColPayee" width="20rem">
+                                <m:Label text="Payee"/>
+                                <template>
+                                  <m:Text text="{oModel>PayeeName}" wrapping="false"/>
+                                </template>
+                              </Column>
+          
+                              <Column width="7em">
+                                <m:Label text="Amount"/>
+                                <template>
+                                  <m:Text text="{oModel>TotalAmount}" wrapping="false"/>
+                                </template>
+                              </Column>
+          
+                              <Column width="8rem">
+                                <m:Label text="Date Approved"/>
+                                <template>
+                                  <m:Text text="{oModel>dateApproved}" wrapping="false"/>
+                                </template>
+                              </Column>
+
+                              <Column width="18rem">
+                                <m:Label text="Template Name"/>
+                                <template>
+                                  <m:Text text="{oModel>Template}" wrapping="false"/>
+                                </template>
+                              </Column>
+
+                              <Column width="5em">
+                                <m:Label text="Level"/>
+                                <template>
+                                  <m:Text text="{oModel>Level}" wrapping="false"/>
+                                </template>
+                              </Column>
+
+                              <Column width="10em">
+                                <m:Label text="Authorizer"/>
+                                <template>
+                                  <m:Text text="{oModel>AuthorizerName}" wrapping="false"/>
+                                </template>
+                              </Column>
+          
+                              <Column width="8rem">
+                                <m:Label text="Document Status"/>
+                                <template>
+                                  <m:Text text="{oModel>DocumentStatus}" wrapping="false"/>
+                                </template>
+                              </Column>
+          
+                              <Column width="10rem">
+                                <m:Label text="Document Type"/>
+                                <template>
+                                  <m:Text text="{oModel>DocumentType}" wrapping="false"/>
+                                </template>
+                              </Column>
+
+                              <Column width="10rem">
+                                <m:Label text="Document Date"/>
+                                <template>
+                                  <m:Text text="{oModel>DocumentDate}" wrapping="false"/>
+                                </template>
+                              </Column>
+
+                              <Column width="10rem" filterProperty="OriginatorName">
+                                <m:Label text="Originator"/>
+                                <template>
+                                  <m:Text text="{oModel>OriginatorName}" wrapping="false"/>
+                                </template>
+                              </Column>
+                              
+                              <Column width="12rem">
+                                <m:Label text="Remarks"/>
+                                <template>
+                                  <m:Text text="{oModel>Remarks}" wrapping="false"/>
+                                </template>
+                              </Column>
+                    </columns>
+                </TreeTable>
+              <!-- </m:Panel> -->
+        </m:content>                   
+	</m:Page>
+</mvc:View>  

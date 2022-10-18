@@ -1,0 +1,16 @@
+<core:FragmentDefinition 
+xmlns="sap.m" 
+xmlns:f="sap.ui.layout.form"
+xmlns:l="sap.ui.layout"  
+xmlns:core="sap.ui.core" 
+xmlns:t="sap.ui.table"
+xmlns:html="http://www.w3.org/1999/xhtml">
+	<Dialog title="Report" contentHeight="100%" contentWidth="100%">
+		  
+        <html:iframe id="ReportViewerIframe"  style="position: absolute; height: 100%; width: 100%;border: none"></html:iframe>
+
+		<endButton>
+			<Button text="CLOSE" press="onCloseReport"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

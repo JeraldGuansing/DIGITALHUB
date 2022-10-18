@@ -1,0 +1,11 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog
+		title="GL"
+		items="{oModel>/GL}"
+		search="handleSearchGL"
+		confirm="handleValueCloseGL">
+		<StandardListItem
+			title="{oModel>AcctName}"
+			description="{oModel>AcctCode}" />
+	</SelectDialog>
+</core:FragmentDefinition>

@@ -1,0 +1,13 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog
+		title="Payment Request"
+		items="{oModel>/PaymentRequest}"
+		search="handleSearchPM"
+		confirm="handleValueHelpClosePM">
+		<StandardListItem
+			title="{oModel>DocNum}"
+			description="{oModel>RequestDate}" 
+      info="{oModel>Status}"
+      infoState="{oModel>InfoState}"/>
+	</SelectDialog>
+</core:FragmentDefinition>
