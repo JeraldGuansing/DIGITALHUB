@@ -20,7 +20,7 @@
       "tablet": "",
       "tablet@2": ""
     },
-    "deviceTypes": {
+    "deviceTypes": {  
       "desktop": true,
       "tablet": true,
       "phone": true
