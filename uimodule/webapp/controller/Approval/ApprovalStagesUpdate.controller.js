@@ -60,7 +60,7 @@ sap.ui.define([
         onLoadUsers: function () {
           this.oModel.getData().Users = [];
           $.ajax({
-            url: "http://13.229.195.111:4300/app-xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETUSERS",
+            url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETUSERS",
             type: "GET",
             async: false,
             beforeSend: function (xhr) {

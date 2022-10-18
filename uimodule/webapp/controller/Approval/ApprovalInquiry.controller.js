@@ -270,7 +270,7 @@ sap.ui.define([
       },
       GetStatus:function(DocType,DocNum){
         $.ajax({
-          url: "http://13.229.195.111:4300/app-xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETSTATUS&VALUE1="+ DocType +"&VALUE2="+ DocNum +"",
+          url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETSTATUS&VALUE1="+ DocType +"&VALUE2="+ DocNum +"",
           type: "GET",
           async: false,
           beforeSend: function (xhr) {
