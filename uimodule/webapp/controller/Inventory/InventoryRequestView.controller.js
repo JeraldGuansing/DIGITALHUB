@@ -15,7 +15,7 @@ sap.ui.define([
 	"use strict";
 	return Controller.extend("com.apptech.DLSL.controller.Inventory.InventoryRequestView", {
 		onBeforeRendering: function () {
-	
+			console.log('Sample')
 		},
 		onInit: function () {
 			this.oModel = new JSONModel("model/inventoryrequest.json");
