@@ -11,7 +11,7 @@
 					<content>
 						<f:SimpleForm    columnsXL="2" columnsL="2" columnsM="2" editable="true" id="form1" layout="ResponsiveGridLayout" width="100%">
 							<f:content>
-								<Image  width="auto" src="./resources/img/logo.png">
+								<Image  width="auto" src="./resources/img/logo.PNG">
 								<layoutData>
 									<l:GridData  span="L8 M8 S12"/>
 								</layoutData>

@@ -111,7 +111,7 @@ sap.ui.define([
         onLoadApprovalStagesRecords: function(){
             this.oModel.getData().ApprovalStages = [];
             $.ajax({
-              url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETRECORDS&VALUE1=APP_APRSTG",
+              url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETRECORDS&VALUE1=APP_APRSTG",
               type: "GET",
               async: false,
               beforeSend: function (xhr) {
@@ -131,7 +131,7 @@ sap.ui.define([
         onLoadApprovalTemplateRecords: function(){
             this.oModel.getData().ApprovalTemplates = [];
             $.ajax({
-              url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETRECORDS&VALUE1=APP_APRTEMP",
+              url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETRECORDS&VALUE1=APP_APRTEMP",
               type: "GET",
               async: false,
               beforeSend: function (xhr) {
@@ -153,7 +153,7 @@ sap.ui.define([
 
         LoadDecision: function (UserCode) {
           $.ajax({
-            url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETFORAPPROVAL&VALUE1=" + UserCode + "&VALUE2=Pending",
+            url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETFORAPPROVAL&VALUE1=" + UserCode + "&VALUE2=Pending",
             type: "GET",
             async: false,
             beforeSend: function (xhr) {
@@ -175,7 +175,7 @@ sap.ui.define([
 
       LoadForApproval: function () {
         this.oModel.getData().ApprovalInquiryRecords = [];
-        var ursStr = "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETFORAPPROVALINQUIRY&VALUE1=&VALUE2=All&VALUE3=Purchase Request";
+        var ursStr = "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETFORAPPROVALINQUIRY&VALUE1=&VALUE2=All&VALUE3=Purchase Request";
         $.ajax({
           url: ursStr,
           type: "GET",
@@ -212,7 +212,7 @@ sap.ui.define([
 
       OnLoadRecordsPM: function () {
         this.oModel.getData().PaymentRequest = [];
-        var urlStr = "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName=" + jQuery.sap.storage.Storage.get("dataBase") + "&procName=SPAPP_GETRECORDS&VALUE1=APP_ORFP";
+        var urlStr = "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName=" + jQuery.sap.storage.Storage.get("dataBase") + "&procName=SPAPP_GETRECORDS&VALUE1=APP_ORFP";
         
         $.ajax({
           url: urlStr,
@@ -258,7 +258,7 @@ sap.ui.define([
       OnLoadRecordsPR: function () {
         this.oModel.getData().PurchaseRequest = [];
         this.oModel.refresh();
-        var urlStr = "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName=" + jQuery.sap.storage.Storage.get("dataBase") + "&procName=SPAPP_GETRECORDS&VALUE1=APP_OPRQ";
+        var urlStr = "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName=" + jQuery.sap.storage.Storage.get("dataBase") + "&procName=SPAPP_GETRECORDS&VALUE1=APP_OPRQ";
         $.ajax({
           url: urlStr,
           type: "GET",
@@ -303,7 +303,7 @@ sap.ui.define([
       OnLoadRecordsINV: function () {
 
         this.oModel.getData().InventoryRequest = [];
-        var urlStr = "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName=" + jQuery.sap.storage.Storage.get("dataBase") + "&procName=SPAPP_GETRECORDS&VALUE1=APP_OIVR";
+        var urlStr = "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName=" + jQuery.sap.storage.Storage.get("dataBase") + "&procName=SPAPP_GETRECORDS&VALUE1=APP_OIVR";
         
         $.ajax({
           url: urlStr,
