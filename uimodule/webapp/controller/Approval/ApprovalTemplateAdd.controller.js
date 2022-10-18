@@ -44,7 +44,7 @@ var oIndex;
         onLoadUsers: function () {
           this.oModel.getData().Users = [];
           $.ajax({
-            url: "https://digitalhub.dlsl.edu.ph/app-xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETUSERS",
+            url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETUSERS",
             type: "GET",
             async: true,
             beforeSend: function (xhr) {
@@ -73,7 +73,7 @@ var oIndex;
         onLoadGL: function () {
           this.oModel.getData().GL = [];
           $.ajax({
-            url: "https://digitalhub.dlsl.edu.ph/app-xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETGLACCOUNT",
+            url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETGLACCOUNT",
             type: "GET",
             async: false,
             beforeSend: function (xhr) {
@@ -101,7 +101,7 @@ var oIndex;
         onLoadSpecialist: function () {
           this.oModel.getData().Specialist = [];
           $.ajax({
-            url: "https://digitalhub.dlsl.edu.ph/app-xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETSPECIALIST",
+            url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETSPECIALIST",
             type: "GET",
             async: false,
             beforeSend: function (xhr) {
@@ -129,7 +129,7 @@ var oIndex;
         OnLoadDept: function () {
           this.oModel.getData().Dept = [];
           $.ajax({
-            url: "https://digitalhub.dlsl.edu.ph/app-xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETDIMENSIONS",
+            url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETDIMENSIONS",
             type: "GET",
             async: false,
             beforeSend: function (xhr) {
@@ -159,7 +159,7 @@ var oIndex;
         OnRefundTerm: function () {
           this.oModel.getData().refund = [];
           $.ajax({
-            url: "https://digitalhub.dlsl.edu.ph/app-xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETDIMENSIONS",
+            url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETDIMENSIONS",
             type: "GET",
             async: false,
             beforeSend: function (xhr) {
@@ -189,7 +189,7 @@ var oIndex;
         OnLoadStages: function(){
           this.oModel.getData().Stages=[];
           $.ajax({
-            url: "https://digitalhub.dlsl.edu.ph/app-xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETSTAGES",
+            url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETSTAGES",
             type: "GET",
             async: true,
             beforeSend: function (xhr) {
