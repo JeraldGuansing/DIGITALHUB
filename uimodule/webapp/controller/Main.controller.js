@@ -165,7 +165,7 @@ sap.ui.define([
 			// this.router.navTo("Login");
 			// sap.ui.core.UIComponent.getRouterFor(this).navTo("Login");
 			$.ajax({
-				url: "https://13.215.36.201:50000/b1s/v1/Logout",
+				url: "http://13.229.195.111:50000/b1s/v1/Logout",
 				type: "POST",
 				error: function (xhr, status, error) {
 				var Message = xhr.responseJSON["error"].message.value;			

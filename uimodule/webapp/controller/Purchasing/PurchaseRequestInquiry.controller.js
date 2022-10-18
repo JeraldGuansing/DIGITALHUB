@@ -32,7 +32,7 @@ sap.ui.define([
         this.oModel.getData().PurchaseRequestInquiryRecords = [];
         this.oModel.refresh();
         $.ajax({
-          url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_CHECKAPPROVAL&VALUE1=" + this.DocNum + "&VALUE2=Purchase Request",
+          url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_CHECKAPPROVAL&VALUE1=" + this.DocNum + "&VALUE2=Purchase Request",
           type: "GET",
           async: false,
           beforeSend: function (xhr) {

@@ -92,7 +92,7 @@ sap.ui.define([
             var sDBCompany = that.getView().byId("selectDatabase");
             var sUserName = this.getView().byId("Username");
             $.ajax({
-              url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETUSERINFO&VALUE1=" + that.getView().byId("Username").getValue(),
+              url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETUSERINFO&VALUE1=" + that.getView().byId("Username").getValue(),
               type: "GET",
               async: false,
               beforeSend: function (xhr) {
@@ -143,7 +143,7 @@ sap.ui.define([
                     oLoginCredentials.Password = sPassword.getValue();//"1234";
                     
                     $.ajax({
-                        url: "https://13.215.36.201:50000/b1s/v1/Login",
+                        url: "http://13.229.195.111:50000/b1s/v1/Login",
                         data: JSON.stringify(oLoginCredentials),
                         type: "POST",
                         crossDomain: true,
@@ -177,7 +177,7 @@ sap.ui.define([
           fGetAllRecords: function(queryTag,v1){
               // var aReturnResult = [];
               $.ajax({
-                  url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName=SBODEMOAU&procName=spAppUserAuth&QUERYTAG="+ queryTag +
+                  url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName=SBODEMOAU&procName=spAppUserAuth&QUERYTAG="+ queryTag +
                   "&VALUE1="+ v1 +"&VALUE2=&VALUE3=&VALUE4=",
                   type: "GET",
                   async: false,
@@ -530,7 +530,7 @@ sap.ui.define([
             getUserEntry: function(Email){
               var that = this;
               var sDBCompany = this.getView().byId("selectDatabase");
-              var oUrls = "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ sDBCompany.getSelectedItem().getKey() +"&procName=spApp_getUserID&value1=" + Email;
+              var oUrls = "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ sDBCompany.getSelectedItem().getKey() +"&procName=spApp_getUserID&value1=" + Email;
               $.ajax({
                 url: oUrls,
                 type: "GET",
@@ -555,7 +555,7 @@ sap.ui.define([
             CheckEmailExist: function(Email){
               var that = this;
               var sDBCompany = this.getView().byId("selectDatabase");
-              var oUrls = "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ sDBCompany.getSelectedItem().getKey() +"&procName=spApp_getUserID&value1=" + Email;
+              var oUrls = "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ sDBCompany.getSelectedItem().getKey() +"&procName=spApp_getUserID&value1=" + Email;
               $.ajax({
                 url: oUrls,
                 type: "GET",
@@ -585,7 +585,7 @@ sap.ui.define([
               oUser.UserPassword = sap.ui.getCore().byId("NPassword").getValue();
 
               $.ajax({
-                url: "https://13.215.36.201:50000/b1s/v1/Users(" + UserID + ")",
+                url: "http://13.229.195.111:50000/b1s/v1/Users(" + UserID + ")",
                 data: JSON.stringify(oUser),
                 headers: { "B1S-ReplaceCollectionsOnPatch": true },
                 type: "PATCH",
@@ -615,7 +615,7 @@ sap.ui.define([
                       oLoginCredentials.Password = "P@ssw0rd";
 
                       $.ajax({
-                          url: "https://13.215.36.201:50000/b1s/v1/Login",
+                          url: "http://13.229.195.111:50000/b1s/v1/Login",
                           data: JSON.stringify(oLoginCredentials),
                           type: "POST",
                           crossDomain: true,
@@ -640,7 +640,7 @@ sap.ui.define([
 
             onLogout: function (oEvent) {
               $.ajax({
-                url: "https://13.215.36.201:50000/b1s/v1/Logout",
+                url: "http://13.229.195.111:50000/b1s/v1/Logout",
                 type: "POST",
                 error: function (xhr, status, error) {
                 var Message = xhr.responseJSON["error"].message.value;			

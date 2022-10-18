@@ -60,7 +60,7 @@ sap.ui.define([
         onLoadUsers: function () {
           this.oModel.getData().Users = [];
           $.ajax({
-            url: "https://13.215.36.201:4300/app-xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETUSERS",
+            url: "http://13.229.195.111:4300/app-xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETUSERS",
             type: "GET",
             async: false,
             beforeSend: function (xhr) {
@@ -89,7 +89,7 @@ sap.ui.define([
         onLoadDept: function(){
           this.oModel.getData().Department=[];
             $.ajax({
-                url:"https://13.215.36.201:50000/b1s/v1/Departments",
+                url:"http://13.229.195.111:50000/b1s/v1/Departments",
                 type:"GET",
                 crossDomain:true,
                 xhrFields:{
@@ -196,7 +196,7 @@ sap.ui.define([
           },
           onLoadApprovalStageRecord:function(){
             $.ajax({
-              url: "https://13.215.36.201:50000/b1s/v1/APP_APRSTG('"+  localStorage.getItem("StageCode") +"')",
+              url: "http://13.229.195.111:50000/b1s/v1/APP_APRSTG('"+  localStorage.getItem("StageCode") +"')",
               type: "GET",
               crossDomain: true,
               xhrFields: {
@@ -249,7 +249,7 @@ sap.ui.define([
             }
 
             $.ajax({
-              url: "https://13.215.36.201:50000/b1s/v1/APP_APRSTG('"+ localStorage.getItem("StageCode") +"')",
+              url: "http://13.229.195.111:50000/b1s/v1/APP_APRSTG('"+ localStorage.getItem("StageCode") +"')",
               data: JSON.stringify(ApprovalStagesBody),           
               headers:{"B1S-ReplaceCollectionsOnPatch":true},
               type: "PATCH",

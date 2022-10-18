@@ -215,7 +215,7 @@ sap.ui.define([
           this.getView().byId("ColPayee").setVisible(false);
         }
 
-        var oUrl = "https://13.215.36.201:4300/getInquiryRecord?database=" + jQuery.sap.storage.Storage.get("dataBase") +"&value1=" + Status + "&value2=" + Type + "&value3=" + DateFrom + "&value4=" + DateTo;
+        var oUrl = "http://13.229.195.111:4300/getInquiryRecord?database=" + jQuery.sap.storage.Storage.get("dataBase") +"&value1=" + Status + "&value2=" + Type + "&value3=" + DateFrom + "&value4=" + DateTo;
          $.ajax({
           url: oUrl,
           type: "GET",
@@ -246,7 +246,7 @@ sap.ui.define([
           this.getView().byId("ColPayee").setVisible(false);
         }
 
-        var oUrl = "https://13.215.36.201:4300/getUserInquiryRecord?database=" + jQuery.sap.storage.Storage.get("dataBase") +"&value1=" + Status + "&value2=" + Type + "&value3=" + User + "&value4=" + DateFrom + "&value5=" + DateTo;
+        var oUrl = "http://13.229.195.111:4300/getUserInquiryRecord?database=" + jQuery.sap.storage.Storage.get("dataBase") +"&value1=" + Status + "&value2=" + Type + "&value3=" + User + "&value4=" + DateFrom + "&value5=" + DateTo;
          $.ajax({
           url: oUrl,
           type: "GET",
@@ -270,7 +270,7 @@ sap.ui.define([
       },
       GetStatus:function(DocType,DocNum){
         $.ajax({
-          url: "https://13.215.36.201:4300/app-xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETSTATUS&VALUE1="+ DocType +"&VALUE2="+ DocNum +"",
+          url: "http://13.229.195.111:4300/app-xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETSTATUS&VALUE1="+ DocType +"&VALUE2="+ DocNum +"",
           type: "GET",
           async: false,
           beforeSend: function (xhr) {

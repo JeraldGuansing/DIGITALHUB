@@ -360,7 +360,7 @@ sap.ui.define([
         this.getView().byId("AddrowID").setEnabled(true);
         this.getView().byId("DelRowID").setEnabled(true);
         this.getView().byId("fileUploader1").setEnabled(true);
-        var oUrl = "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ localStorage.getItem("DLSLDB") +"&procName=SPAPP_CHECKAPPROVAL&VALUE1=" + this.getView().byId("PRNo").getValue() + "&VALUE2=Purchase Request";
+        var oUrl = "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ localStorage.getItem("DLSLDB") +"&procName=SPAPP_CHECKAPPROVAL&VALUE1=" + this.getView().byId("PRNo").getValue() + "&VALUE2=Purchase Request";
         $.ajax({
           url: oUrl,
           type: "GET",
@@ -442,7 +442,7 @@ sap.ui.define([
       try{
         this.oModel.getData().PurchaseRequestRecords = [];
         this.oModel.refresh();
-        var urlString = "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName=" + jQuery.sap.storage.Storage.get("dataBase") + "&procName=spApp_GetTransaction&VALUE1=APP_OPRQ&VALUE2=" + localStorage.getItem("UserCode");
+        var urlString = "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName=" + jQuery.sap.storage.Storage.get("dataBase") + "&procName=spApp_GetTransaction&VALUE1=APP_OPRQ&VALUE2=" + localStorage.getItem("UserCode");
         $.ajax({
           url: urlString,
           type: "GET",
@@ -506,7 +506,7 @@ sap.ui.define([
       try{
         this.oModel.getData().PurchaseRequestRecords = [];
         this.oModel.refresh();
-        var urlString = "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName=" + jQuery.sap.storage.Storage.get("dataBase") + "&procName=spApp_AdminTransaction&VALUE1=APP_OPRQ";
+        var urlString = "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName=" + jQuery.sap.storage.Storage.get("dataBase") + "&procName=spApp_AdminTransaction&VALUE1=APP_OPRQ";
         $.ajax({
           url: urlString,
           type: "GET",
@@ -577,7 +577,7 @@ sap.ui.define([
     OnLoadUsers: function () {
       this.oModel.getData().Users = [];
       $.ajax({
-        url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETUSERS",
+        url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETUSERS",
         type: "GET",
         async: false,
         beforeSend: function (xhr) {
@@ -605,7 +605,7 @@ sap.ui.define([
     getSeriesDetails: function () {
       this.oModel.getData().Users = [];
       $.ajax({
-        url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=spApp_Series&Value1=Purchase Request",
+        url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=spApp_Series&Value1=Purchase Request",
         type: "GET",
         async: false,
         beforeSend: function (xhr) {
@@ -627,7 +627,7 @@ sap.ui.define([
     OnLoadDept: function () {
       this.oModel.getData().Department = [];
       $.ajax({
-        url: "https://13.215.36.201:50000/b1s/v1/Departments",
+        url: "http://13.229.195.111:50000/b1s/v1/Departments",
         type: "GET",
         crossDomain: true,
         xhrFields: {
@@ -655,7 +655,7 @@ sap.ui.define([
     onLoadPositions: function () {
       this.oModel.getData().Positions = [];
       $.ajax({
-        url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETPOSITIONS",
+        url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETPOSITIONS",
         type: "GET",
         async: false,
         beforeSend: function (xhr) {
@@ -681,7 +681,7 @@ sap.ui.define([
     onLoadItems: function () {
       this.oModel.getData().Items = [];
       $.ajax({
-        url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETITEMS&VALUE1=Purchase Request",
+        url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETITEMS&VALUE1=Purchase Request",
         type: "GET",
         async: false,
         beforeSend: function (xhr) {
@@ -709,7 +709,7 @@ sap.ui.define([
     onLoadGL: function () {
       this.oModel.getData().GL = [];
       $.ajax({
-        url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETGLACCOUNT",
+        url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETGLACCOUNT",
         type: "GET",
         async: false,
         beforeSend: function (xhr) {
@@ -737,7 +737,7 @@ sap.ui.define([
       this.oModel.getData().Dept = [];
       this.oModel.getData().Div = [];
       $.ajax({
-        url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=GET_USERDEPT&VALUE1=" + localStorage.getItem("UserCode"),
+        url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=GET_USERDEPT&VALUE1=" + localStorage.getItem("UserCode"),
         type: "GET",
         async: false,
         beforeSend: function (xhr) {
@@ -782,7 +782,7 @@ sap.ui.define([
       this.oModel.getData().Program = [];
       this.oModel.getData().Employee=[];
       $.ajax({
-        url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETDIMENSIONS",
+        url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETDIMENSIONS",
         type: "GET",
         async: false,
         beforeSend: function (xhr) {
@@ -840,7 +840,7 @@ sap.ui.define([
     onLoadUOM: function (ItemCode) {
       this.oModel.getData().UOM = [];
       $.ajax({
-        url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_UOMGRP&Value1=" + ItemCode,
+        url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_UOMGRP&Value1=" + ItemCode,
         type: "GET",
         async: false,
         beforeSend: function (xhr) {
@@ -867,7 +867,7 @@ sap.ui.define([
     onLoadVendor: function () {
       this.oModel.getData().Vendor = [];
       $.ajax({
-        url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETVENDOR",
+        url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETVENDOR",
         type: "GET",
         async: false,
         beforeSend: function (xhr) {
@@ -893,7 +893,7 @@ sap.ui.define([
     onLoadTaxCodes: function () {
       this.oModel.getData().TaxCode = [];
       $.ajax({
-        url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETTAXCODE",
+        url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETTAXCODE",
         type: "GET",
         async: false,
         beforeSend: function (xhr) {
@@ -919,7 +919,7 @@ sap.ui.define([
     onLoadWhse: function () {
       this.oModel.getData().Warehouse = [];
       $.ajax({
-        url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETWHSE",
+        url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETWHSE",
         type: "GET",
         async: false,
         beforeSend: function (xhr) {
@@ -945,7 +945,7 @@ sap.ui.define([
     onLoadSpecialist: function () {
       this.oModel.getData().Specialist = [];
       $.ajax({
-        url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETSPECIALIST",
+        url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETSPECIALIST",
         type: "GET",
         async: false,
         beforeSend: function (xhr) {
@@ -972,7 +972,7 @@ sap.ui.define([
 
     onLoadPRRecord:function(RowIndex){
       $.ajax({
-        url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETDOCENTRY&VALUE1="+ this.getView().byId("PRNo").getValue() +"&VALUE2=APP_OPRQ",
+        url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETDOCENTRY&VALUE1="+ this.getView().byId("PRNo").getValue() +"&VALUE2=APP_OPRQ",
         type: "GET",
         async: false,
         beforeSend: function (xhr) {
@@ -987,7 +987,7 @@ sap.ui.define([
         },
         context: this
       }).done(function (results) {
-        var SURL =  "https://13.215.36.201:50000/b1s/v1/APP_OPRQ("+ results[0].DocEntry +")";
+        var SURL =  "http://13.229.195.111:50000/b1s/v1/APP_OPRQ("+ results[0].DocEntry +")";
        
         $.ajax({
           url: SURL,
@@ -1695,7 +1695,7 @@ sap.ui.define([
     },
     getNextNumber: function () {
       $.ajax({
-        url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=GETNEXTDOCNUM&VALUE1=APP_OPRQ",
+        url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=GETNEXTDOCNUM&VALUE1=APP_OPRQ",
         type: "GET",
         async: false,
         beforeSend: function (xhr) {
@@ -1765,7 +1765,7 @@ sap.ui.define([
     
     onChangeUser: function (UserCode) {
       $.ajax({
-        url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETUSERINFO&VALUE1=" + UserCode + "",
+        url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETUSERINFO&VALUE1=" + UserCode + "",
         type: "GET",
         async: false,
         beforeSend: function (xhr) {
@@ -1789,7 +1789,7 @@ sap.ui.define([
     },
     onChangeItem: function (ItemCode) {
       $.ajax({
-        url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETITEMINFO&VALUE1=" + ItemCode + "",
+        url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETITEMINFO&VALUE1=" + ItemCode + "",
         type: "GET",
         async: false,
         beforeSend: function (xhr) {
@@ -1856,7 +1856,7 @@ sap.ui.define([
     },
     getGLAccount:function(ItemCode,Year){
       $.ajax({
-        url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPGET_GLACCOUNT&VALUE1=" + ItemCode + "&VALUE2="+ Year +"",
+        url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPGET_GLACCOUNT&VALUE1=" + ItemCode + "&VALUE2="+ Year +"",
         type: "GET",
         async: false,
         beforeSend: function (xhr) {
@@ -2073,7 +2073,7 @@ sap.ui.define([
       this.getNextNumber();
       // this.onAttachmentDoc(this.oModel.getData().PurchaseRequest.No);
         $.ajax({
-          url: "https://13.215.36.201:50000/b1s/v1/APP_OPRQ",
+          url: "http://13.229.195.111:50000/b1s/v1/APP_OPRQ",
           data: JSON.stringify(PurchaseRequestBody),
           type: "POST",
           crossDomain: true,
@@ -2156,7 +2156,7 @@ sap.ui.define([
       }
         
           $.ajax({
-            url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETDOCENTRY&VALUE1="+ this.oModel.getData().PurchaseRequest.No +"&VALUE=APP_OPRQ",
+            url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETDOCENTRY&VALUE1="+ this.oModel.getData().PurchaseRequest.No +"&VALUE=APP_OPRQ",
             type: "GET",
             async: false,
             beforeSend: function (xhr) {
@@ -2171,7 +2171,7 @@ sap.ui.define([
             context: this
           }).done(function (results) {
             $.ajax({
-              url: "https://13.215.36.201:50000/b1s/v1/APP_OPRQ("+ results[0].DocEntry +")",
+              url: "http://13.229.195.111:50000/b1s/v1/APP_OPRQ("+ results[0].DocEntry +")",
               data: JSON.stringify(PurchaseRequestBody),
               headers:{"B1S-ReplaceCollectionsOnPatch":true},
               type: "PATCH",
@@ -2249,7 +2249,7 @@ sap.ui.define([
       this.getNextNumber();
       this.onAttachmentDoc(this.oModel.getData().PurchaseRequest.No);
         $.ajax({
-          url: "https://13.215.36.201:50000/b1s/v1/APP_OPRQ",
+          url: "http://13.229.195.111:50000/b1s/v1/APP_OPRQ",
           data: JSON.stringify(PurchaseRequestBody),
           type: "POST",
           crossDomain: true,
@@ -2325,7 +2325,7 @@ sap.ui.define([
         });
       }
           $.ajax({
-            url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETDOCENTRY&VALUE1="+ this.oModel.getData().PurchaseRequest.No +"&VALUE=APP_OPRQ",
+            url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETDOCENTRY&VALUE1="+ this.oModel.getData().PurchaseRequest.No +"&VALUE=APP_OPRQ",
             type: "GET",
             async: false,
             beforeSend: function (xhr) {
@@ -2340,7 +2340,7 @@ sap.ui.define([
             context: this
           }).done(function (results) {
             $.ajax({
-              url: "https://13.215.36.201:50000/b1s/v1/APP_OPRQ("+ results[0].DocEntry +")",
+              url: "http://13.229.195.111:50000/b1s/v1/APP_OPRQ("+ results[0].DocEntry +")",
               data: JSON.stringify(PurchaseRequestBody),
               headers:{"B1S-ReplaceCollectionsOnPatch":true},
               type: "PATCH",
@@ -2374,7 +2374,7 @@ sap.ui.define([
      
     getAttachmentPath(AttachmentEntry){
         $.ajax({
-          url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETATTACHMENT&VALUE1="+ AttachmentEntry +"",
+          url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETATTACHMENT&VALUE1="+ AttachmentEntry +"",
           type: "GET",
           async: false,
           beforeSend: function (xhr) {
@@ -2396,7 +2396,7 @@ sap.ui.define([
     },
     onCancel:function(){
       $.ajax({
-        url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETDOCENTRY&VALUE1="+ this.oModel.getData().PurchaseRequest.No +"&VALUE=APP_OPRQ",
+        url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETDOCENTRY&VALUE1="+ this.oModel.getData().PurchaseRequest.No +"&VALUE=APP_OPRQ",
         type: "GET",
         async: false,
         beforeSend: function (xhr) {
@@ -2411,7 +2411,7 @@ sap.ui.define([
         context: this
       }).done(function (results) {
         $.ajax({
-          url: "https://13.215.36.201:50000/b1s/v1/APP_OPRQ("+ results[0].DocEntry +")/Cancel",
+          url: "http://13.229.195.111:50000/b1s/v1/APP_OPRQ("+ results[0].DocEntry +")/Cancel",
           type: "POST",
           crossDomain: true,
           xhrFields: {
@@ -2460,7 +2460,7 @@ sap.ui.define([
       this.byId("PRTable").getBinding("rows").filter(oFilter, "Application");
     },
     ApprovalRoute:function(DocType,UserCode,DocNum,DocDate,DueDate,Remarks,totalAmount,oDepart,oDepos){
-      var strURL = "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_APPROVALROUTE&VALUE1=" + DocType + "&VALUE2="+ UserCode +"&VALUE3="+ DocNum +"&VALUE4=1";
+      var strURL = "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_APPROVALROUTE&VALUE1=" + DocType + "&VALUE2="+ UserCode +"&VALUE3="+ DocNum +"&VALUE4=1";
       $.ajax({
         url:strURL,
         type: "GET",
@@ -2495,7 +2495,7 @@ sap.ui.define([
             ApprovalPostingBody.U_APP_DocDate=DocDate;
             ApprovalPostingBody.U_APP_DueDate=DueDate;
             $.ajax({
-              url: "https://13.215.36.201:50000/b1s/v1/APP_APRDEC",
+              url: "http://13.229.195.111:50000/b1s/v1/APP_APRDEC",
               data: JSON.stringify(ApprovalPostingBody),
               type: "POST",
               crossDomain: true,
@@ -2569,7 +2569,7 @@ sap.ui.define([
     onGetEmail: function (Approver) {
       var that = this;
       $.ajax({
-        url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETUSERINFO&VALUE1=" + Approver,
+        url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETUSERINFO&VALUE1=" + Approver,
         type: "GET",
         async: false,
         beforeSend: function (xhr) {
@@ -2628,7 +2628,7 @@ sap.ui.define([
       }
     
       $.ajax({
-        url: "https://13.215.36.201:50000/b1s/v1/PurchaseRequests",
+        url: "http://13.229.195.111:50000/b1s/v1/PurchaseRequests",
         data: JSON.stringify(PurchaseRequest),
         type: "POST",
         crossDomain: true,
@@ -2642,7 +2642,7 @@ sap.ui.define([
         context:this,
         success: function (json) {
           $.ajax({
-            url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETDOCENTRY&VALUE1="+ DocNum +"&VALUE=APP_OPRQ",
+            url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETDOCENTRY&VALUE1="+ DocNum +"&VALUE=APP_OPRQ",
             type: "GET",
             async: false,
             beforeSend: function (xhr) {
@@ -2656,7 +2656,7 @@ sap.ui.define([
             },
             context: this
           }).done(function (results) {
-            var oUrl = "https://13.215.36.201:50000/b1s/v1/APP_OPRQ("+ results[0].DocEntry +")/Close"
+            var oUrl = "http://13.229.195.111:50000/b1s/v1/APP_OPRQ("+ results[0].DocEntry +")/Close"
             $.ajax({
               url: oUrl,
               type: "POST",
@@ -2723,14 +2723,14 @@ sap.ui.define([
 
     onViewAttachment: function(oEvent){
       this.iSelectedRow = oEvent.getSource().getParent().getIndex();
-          window.open("https://13.215.36.201:50000/b1s/v1/Attachments2(" + localStorage.getItem("AttcEntry") + ")/$value?filename='" + this.oModel.getData().Attachments[this.iSelectedRow].FileName + "." + this.oModel.getData().Attachments[this.iSelectedRow].FileExtension +  "'");
+          window.open("http://13.229.195.111:50000/b1s/v1/Attachments2(" + localStorage.getItem("AttcEntry") + ")/$value?filename='" + this.oModel.getData().Attachments[this.iSelectedRow].FileName + "." + this.oModel.getData().Attachments[this.iSelectedRow].FileExtension +  "'");
     },
   
     
 		getFromAttachment(DocEntry){
 			try{
 				$.ajax({
-					url: "https://13.215.36.201:50000/b1s/v1/Attachments2?$filter=AbsoluteEntry eq " +  DocEntry,
+					url: "http://13.229.195.111:50000/b1s/v1/Attachments2?$filter=AbsoluteEntry eq " +  DocEntry,
 					type: "GET",
 					async: "false",
 					crossDomain: true,
@@ -2768,7 +2768,7 @@ sap.ui.define([
 			oBody.U_DocEntry = ""
 		
 			$.ajax({
-				url: "https://13.215.36.201:50000/b1s/v1/U_APP_ATCH",
+				url: "http://13.229.195.111:50000/b1s/v1/U_APP_ATCH",
 				data: JSON.stringify(oBody),
 				type: "POST",
 				crossDomain: true,
@@ -2799,7 +2799,7 @@ sap.ui.define([
 					attachmentDoc.U_DocEntry = Code;
 					
 					$.ajax({
-						url: "https://13.215.36.201:50000/b1s/v1/U_APP_ATCH('" + ottachments[i].Code + "')",
+						url: "http://13.229.195.111:50000/b1s/v1/U_APP_ATCH('" + ottachments[i].Code + "')",
 						data: JSON.stringify(attachmentDoc),
 						type: "PATCH",
 						crossDomain: true,
@@ -2842,7 +2842,7 @@ sap.ui.define([
         }
   
         $.ajax({
-          url: "https://13.215.36.201:50000/b1s/v1/Attachments2("+ localStorage.getItem("AttcEntry") +")",
+          url: "http://13.229.195.111:50000/b1s/v1/Attachments2("+ localStorage.getItem("AttcEntry") +")",
           data: JSON.stringify(oBody),
           headers: { "prefer": "return-no-content","B1S-ReplaceCollectionsOnPatch":true},
           type: "PATCH",
@@ -2885,7 +2885,7 @@ sap.ui.define([
         form.append("", this.currentFile, FileName);
           //Postinf Attachment in SAP
           $.ajax({
-            url: "https://13.215.36.201:50000/b1s/v1/Attachments2",
+            url: "http://13.229.195.111:50000/b1s/v1/Attachments2",
             data: form,
             type: "POST",
             processData: false,
@@ -2932,7 +2932,7 @@ sap.ui.define([
         form.append("", this.currentFile, FileName);
           //Postinf Attachment in SAP
           $.ajax({
-            url: "https://13.215.36.201:50000/b1s/v1/Attachments2",
+            url: "http://13.229.195.111:50000/b1s/v1/Attachments2",
             data: form,
             type: "POST",
             processData: false,
@@ -2985,7 +2985,7 @@ sap.ui.define([
           }
 
         $.ajax({
-          url:"https://13.215.36.201:50000/b1s/v1/Attachments2",
+          url:"http://13.229.195.111:50000/b1s/v1/Attachments2",
           data: form,
           type: "POST",
           processData: false,

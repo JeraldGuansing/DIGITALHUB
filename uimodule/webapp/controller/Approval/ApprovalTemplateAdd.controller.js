@@ -569,7 +569,7 @@ var oIndex;
               
 
             $.ajax({
-              url: "https://13.215.36.201:50000/b1s/v1/APP_APRTEMP",
+              url: "http://13.229.195.111:50000/b1s/v1/APP_APRTEMP",
               data: JSON.stringify(ApprovalTemplateBody),
               type: "POST",
               crossDomain: true,

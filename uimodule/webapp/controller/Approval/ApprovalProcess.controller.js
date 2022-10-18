@@ -79,7 +79,7 @@ sap.ui.define([
         },
         OnDelete:function(){
           $.ajax({
-            url: "https://13.215.36.201:50000/b1s/v1/APP_APRSTG('"+ this.oModel.getData().ApprovalStages[this.getView().byId("approvalstages").getSelectedIndex()].StageName +"')",
+            url: "http://13.229.195.111:50000/b1s/v1/APP_APRSTG('"+ this.oModel.getData().ApprovalStages[this.getView().byId("approvalstages").getSelectedIndex()].StageName +"')",
             type: "DELETE",
             crossDomain: true,
             xhrFields: {
@@ -139,7 +139,7 @@ sap.ui.define([
         onLoadApprovalStagesRecords: function(){
             this.oModel.getData().ApprovalStages = [];
             $.ajax({
-              url: "https://13.215.36.201:4300/app-xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETRECORDS&VALUE1=APP_APRSTG",
+              url: "http://13.229.195.111:4300/app-xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETRECORDS&VALUE1=APP_APRSTG",
               type: "GET",
               async: false,
               beforeSend: function (xhr) {
@@ -170,7 +170,7 @@ sap.ui.define([
             this.getView().byId("TermsID").setValue("");
             this.oModel.getData().ApprovalTemplates = [];
             $.ajax({
-              url: "https://13.215.36.201:4300/app-xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETRECORDS&VALUE1=APP_APRTEMP",
+              url: "http://13.229.195.111:4300/app-xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETRECORDS&VALUE1=APP_APRTEMP",
               type: "GET",
               async: false,
               beforeSend: function (xhr) {
@@ -213,7 +213,7 @@ sap.ui.define([
           this.oModel.getData().ApprovalTemplates = [];
           this.oModel.refresh();
           $.ajax({
-            url: "https://13.215.36.201:4300/app-xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=spApp_SearchRecords&VALUE1=APP_APRTEMP&VALUE2=" +  this.getView().byId("TermsID").getValue(),
+            url: "http://13.229.195.111:4300/app-xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=spApp_SearchRecords&VALUE1=APP_APRTEMP&VALUE2=" +  this.getView().byId("TermsID").getValue(),
             type: "GET",
             async: false,
             beforeSend: function (xhr) {

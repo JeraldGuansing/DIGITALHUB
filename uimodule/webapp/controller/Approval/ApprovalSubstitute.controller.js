@@ -78,7 +78,7 @@ sap.ui.define([
 			APPui5.openLoadingFragment();
 			this.oModel.getData().ApprovalSubstutute = [];
 			$.ajax({
-			  url: "https://13.215.36.201:4300/app-xsjs/ExecQuery.xsjs?dbName=" + jQuery.sap.storage.Storage.get("dataBase") + "&procName=SPAPP_SUBSTITUTE",
+			  url: "http://13.229.195.111:4300/app-xsjs/ExecQuery.xsjs?dbName=" + jQuery.sap.storage.Storage.get("dataBase") + "&procName=SPAPP_SUBSTITUTE",
 			  type: "GET",
 			  async: true,
 			  beforeSend: function (xhr) {
@@ -115,7 +115,7 @@ sap.ui.define([
 		onLoadAuthorizer: function(){
 			this.oModel.getData().Stages = [];
 			$.ajax({
-			  url: "https://13.215.36.201:4300/app-xsjs/ExecQuery.xsjs?dbName=" + jQuery.sap.storage.Storage.get("dataBase") + "&procName=SPAPP_GETSTAGES",
+			  url: "http://13.229.195.111:4300/app-xsjs/ExecQuery.xsjs?dbName=" + jQuery.sap.storage.Storage.get("dataBase") + "&procName=SPAPP_GETSTAGES",
 			  type: "GET",
 			  async: true,
 			  beforeSend: function (xhr) {
@@ -211,7 +211,7 @@ sap.ui.define([
 		onLoadApprovalTemplateRecords: function(){
             this.oModel.getData().ApprovalTemplates = [];
             $.ajax({
-              url: "https://13.215.36.201:4300/app-xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETRECORDS&VALUE1=APP_APRTEMP",
+              url: "http://13.229.195.111:4300/app-xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETRECORDS&VALUE1=APP_APRTEMP",
               type: "GET",
               async: false,
               beforeSend: function (xhr) {
@@ -311,7 +311,7 @@ sap.ui.define([
 					
 				console.log(oBody)			
 				$.ajax({
-				url: "https://13.215.36.201:50000/b1s/v1/U_APP_OAST",
+				url: "http://13.229.195.111:50000/b1s/v1/U_APP_OAST",
 				data: JSON.stringify(oBody),
 				type: "POST",
 				crossDomain: true,

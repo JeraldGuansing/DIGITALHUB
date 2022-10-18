@@ -36,7 +36,7 @@ sap.ui.define([
     
       onLoadPRRecord:function(){
         $.ajax({
-          url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETDOCENTRY&VALUE1="+ this.DocNum  +"&VALUE=APP_OPRQ",
+          url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETDOCENTRY&VALUE1="+ this.DocNum  +"&VALUE=APP_OPRQ",
           type: "GET",
           async: false,
           beforeSend: function (xhr) {
@@ -51,7 +51,7 @@ sap.ui.define([
           context: this
         }).done(function (results) {
           $.ajax({
-            url: "https://13.215.36.201:50000/b1s/v1/APP_OPRQ("+ results[0].DocEntry +")",
+            url: "http://13.229.195.111:50000/b1s/v1/APP_OPRQ("+ results[0].DocEntry +")",
             type: "GET",
             crossDomain: true,
             xhrFields: {
@@ -120,7 +120,7 @@ sap.ui.define([
       },
       getDepartment:function(Department){
         $.ajax({
-          url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETDEPT&VALUE1="+ Department +"",
+          url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETDEPT&VALUE1="+ Department +"",
           type: "GET",
           async: false,
           beforeSend: function (xhr) {
@@ -141,7 +141,7 @@ sap.ui.define([
       },
       getUser:function(User){
         $.ajax({
-          url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETUSR&VALUE1="+ User +"",
+          url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETUSR&VALUE1="+ User +"",
           type: "GET",
           async: false,
           beforeSend: function (xhr) {
@@ -199,12 +199,12 @@ sap.ui.define([
 
       onViewAttachment: function(oEvent){
           this.iSelectedRow = oEvent.getSource().getParent().getIndex();    
-          window.open("https://13.215.36.201:50000/b1s/v1/Attachments2(" + this.oModel.getData().PurchaseRequest.AttachmentEntry + ")/$value?filename='" + this.oModel.getData().Attachments[this.iSelectedRow].FileName + "." + this.oModel.getData().Attachments[this.iSelectedRow].FileExtension +  "'");  
+          window.open("http://13.229.195.111:50000/b1s/v1/Attachments2(" + this.oModel.getData().PurchaseRequest.AttachmentEntry + ")/$value?filename='" + this.oModel.getData().Attachments[this.iSelectedRow].FileName + "." + this.oModel.getData().Attachments[this.iSelectedRow].FileExtension +  "'");  
       },
   
       getAttachmentPath(AttachmentEntry){
         $.ajax({
-          url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETATTACHMENT&VALUE1="+ AttachmentEntry +"",
+          url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETATTACHMENT&VALUE1="+ AttachmentEntry +"",
           type: "GET",
           async: false,
           beforeSend: function (xhr) {
@@ -239,7 +239,7 @@ sap.ui.define([
         var report = 'PRF';
         
         //**KOA 03282022 */
-        // if(url="https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName='WEBAPP_TESTING'"){
+        // if(url="http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName='WEBAPP_TESTING'"){
         //   var sRedirectUrl = `http://digitalhub.dlsl.edu.ph/1DLSL-TRX_Forms/TRXForms-viewer.jsp?report=${report}&docentry=${docentry}`;
         // }else{
         //   var sRedirectUrl = `http://digitalhub.dlsl.edu.ph/DLSL-TRX_Forms/TRXForms-viewer.jsp?report=${report}&docentry=${docentry}`;
@@ -259,7 +259,7 @@ sap.ui.define([
 	  getFromAttachment(DocEntry){
       try{
         $.ajax({
-          url: "https://13.215.36.201:50000/b1s/v1/Attachments2?$filter=AbsoluteEntry eq " +  DocEntry,
+          url: "http://13.229.195.111:50000/b1s/v1/Attachments2?$filter=AbsoluteEntry eq " +  DocEntry,
           type: "GET",
           async: "false",
           crossDomain: true,

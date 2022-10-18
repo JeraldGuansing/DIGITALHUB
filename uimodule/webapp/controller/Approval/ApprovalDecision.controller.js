@@ -91,7 +91,7 @@ sap.ui.define([
       }
 
 
-      var urlStr ="https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETFORAPPROVALINQUIRY3&VALUE1=&VALUE2="+ this.getView().byId("filters").getSelectedKey() +"&VALUE3="+ this.getView().byId("doctype").getSelectedKey() +""; 
+      var urlStr ="http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETFORAPPROVALINQUIRY3&VALUE1=&VALUE2="+ this.getView().byId("filters").getSelectedKey() +"&VALUE3="+ this.getView().byId("doctype").getSelectedKey() +""; 
       $.ajax({
         url: urlStr,
         type: "GET",
@@ -194,7 +194,7 @@ sap.ui.define([
       var that = this;
       templateName = "";
       $.ajax({
-        url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETTEMPNAME&VALUE1=" + tempName + "&VALUE1=" + DocType,
+        url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETTEMPNAME&VALUE1=" + tempName + "&VALUE1=" + DocType,
         type: "GET",
         async: false,
         beforeSend: function (xhr) {
@@ -229,7 +229,7 @@ sap.ui.define([
 
       this.oModel.getData().ApprovalDecisionRecords = [];
       $.ajax({
-        url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETFORAPPROVALINQUIRY3&VALUE1=&VALUE2="+ this.getView().byId("filters").getSelectedKey() +"&VALUE3="+ this.getView().byId("doctype").getSelectedKey() +"",
+        url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETFORAPPROVALINQUIRY3&VALUE1=&VALUE2="+ this.getView().byId("filters").getSelectedKey() +"&VALUE3="+ this.getView().byId("doctype").getSelectedKey() +"",
         type: "GET",
         async: false,
         beforeSend: function (xhr) {
@@ -409,7 +409,7 @@ sap.ui.define([
           ApprovalPostingBody.U_APP_ApprovedDate =  APPui5.updateDateFunc(new Date());
         
       $.ajax({
-        url: "https://13.215.36.201:50000/b1s/v1/APP_APRDEC(" + oRowSelected.No + ")",
+        url: "http://13.229.195.111:50000/b1s/v1/APP_APRDEC(" + oRowSelected.No + ")",
         data: JSON.stringify(ApprovalPostingBody),
         type: "PATCH",
         crossDomain: true,
@@ -488,7 +488,7 @@ sap.ui.define([
     onSendEmail: function(Content){
       var that = this;
       var settings = {
-        "url": "https://13.215.36.201:4300/" + Content[0].URL,
+        "url": "http://13.229.195.111:4300/" + Content[0].URL,
         "method": "POST",
         "timeout": 0,
         "headers": {
@@ -512,7 +512,7 @@ sap.ui.define([
     onSendEmail2: function(Content){
       var that = this;
       var settings = {
-        "url": "https://13.215.36.201:4300/" + Content[0].URL,
+        "url": "http://13.229.195.111:4300/" + Content[0].URL,
         "method": "POST",
         "timeout": 0,
         "headers": {
@@ -537,7 +537,7 @@ sap.ui.define([
     onGetEmail: function (Approver) {
       var that = this;
       $.ajax({
-        url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETUSERINFO&VALUE1=" + Approver,
+        url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETUSERINFO&VALUE1=" + Approver,
         type: "GET",
         async: false,
         beforeSend: function (xhr) {
@@ -559,7 +559,7 @@ sap.ui.define([
     onGetReqEmail: function (Requester) {
       var that = this;
       $.ajax({
-        url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETUSERINFO&VALUE1=" + Requester,
+        url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETUSERINFO&VALUE1=" + Requester,
         type: "GET",
         async: false,
         beforeSend: function (xhr) {
@@ -581,7 +581,7 @@ sap.ui.define([
     ongetNextApprover: function (oTemp,oLevel) {
       var that = this;
       $.ajax({
-        url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETNEXTAPPROVAL&VALUE1=" + oTemp + "&VALUE2=" + oLevel ,
+        url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETNEXTAPPROVAL&VALUE1=" + oTemp + "&VALUE2=" + oLevel ,
         type: "GET",
         async: false,
         beforeSend: function (xhr) {
@@ -626,7 +626,7 @@ sap.ui.define([
 
 
       $.ajax({
-        url: "https://13.215.36.201:50000/b1s/v1/APP_APRDEC(" + this.oModel.getData().ApprovalDecisionRecords[this.iSelectedRow].No + ")",
+        url: "http://13.229.195.111:50000/b1s/v1/APP_APRDEC(" + this.oModel.getData().ApprovalDecisionRecords[this.iSelectedRow].No + ")",
         data: JSON.stringify(ApprovalPostingBody),
         type: "PATCH",
         crossDomain: true,
@@ -716,7 +716,7 @@ sap.ui.define([
       ApprovalPostingBody.U_APP_Notes = this.oModel.getData().ApprovalDecisionRecords[this.iSelectedRow].Notes;
       ApprovalPostingBody.U_APP_Template=this.oModel.getData().ApprovalDecisionRecords[this.iSelectedRow].Template;
       $.ajax({
-        url: "https://13.215.36.201:50000/b1s/v1/APP_APRDEC(" + this.oModel.getData().ApprovalDecisionRecords[this.iSelectedRow].No + ")",
+        url: "http://13.229.195.111:50000/b1s/v1/APP_APRDEC(" + this.oModel.getData().ApprovalDecisionRecords[this.iSelectedRow].No + ")",
         data: JSON.stringify(ApprovalPostingBody),
         type: "PATCH",
         crossDomain: true,
@@ -802,7 +802,7 @@ sap.ui.define([
     onRejectApproval: function(oTemp,oLevel){
       var that = this;
       $.ajax({
-        url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETNEXTAPPROVAL&VALUE1=" + oTemp + "&VALUE2=" + oLevel ,
+        url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETNEXTAPPROVAL&VALUE1=" + oTemp + "&VALUE2=" + oLevel ,
         type: "GET",
         async: false,
         beforeSend: function (xhr) {
@@ -829,7 +829,7 @@ sap.ui.define([
     },
     onGetUoMEntry: function (uom) {
       $.ajax({
-        url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=spApp_getUoMEntry&Value1=" + uom,
+        url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=spApp_getUoMEntry&Value1=" + uom,
         type: "GET",
         async: false,
         beforeSend: function (xhr) {
@@ -853,7 +853,7 @@ sap.ui.define([
     PostToSAP: function (DocumentType, No,Level,rows) {
       if (DocumentType === "Purchase Request") {
         $.ajax({
-          url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_CHECKAPPROVAL&VALUE1=" + No  + "&VALUE2=" + DocumentType +"",
+          url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_CHECKAPPROVAL&VALUE1=" + No  + "&VALUE2=" + DocumentType +"",
           type: "GET",
           async: false,
           beforeSend: function (xhr) {
@@ -871,7 +871,7 @@ sap.ui.define([
         }).done(function (results) {
           if (results.length===0){
             $.ajax({
-              url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_APPROVALROUTE&VALUE1=" + DocumentType  + "&VALUE2=" + this.oModel.getData().ApprovalDecisionRecords[this.iSelectedRow].Originator + "&VALUE3="+ No +"&VALUE4="+ Level +"",
+              url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_APPROVALROUTE&VALUE1=" + DocumentType  + "&VALUE2=" + this.oModel.getData().ApprovalDecisionRecords[this.iSelectedRow].Originator + "&VALUE3="+ No +"&VALUE4="+ Level +"",
               type: "GET",
               async: false,
               beforeSend: function (xhr) {
@@ -890,7 +890,7 @@ sap.ui.define([
             
               if (results.length === 0) {
                 $.ajax({
-                  url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_APPROVALROUTE&VALUE1=" + DocumentType  + "&VALUE2=" + this.oModel.getData().ApprovalDecisionRecords[this.iSelectedRow].Originator + "&VALUE3="+ No +"&VALUE4="+ Level +"",
+                  url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_APPROVALROUTE&VALUE1=" + DocumentType  + "&VALUE2=" + this.oModel.getData().ApprovalDecisionRecords[this.iSelectedRow].Originator + "&VALUE3="+ No +"&VALUE4="+ Level +"",
                   type: "GET",
                   async: false,
                   beforeSend: function (xhr) {
@@ -908,7 +908,7 @@ sap.ui.define([
                 }).done(function (results) {
                   this.GetDocEntry(No, DocumentType);
                   $.ajax({
-                    url: "https://13.215.36.201:50000/b1s/v1/APP_OPRQ(" + this.DocEntry + ")",
+                    url: "http://13.229.195.111:50000/b1s/v1/APP_OPRQ(" + this.DocEntry + ")",
                     type: "GET",
                     crossDomain: true,
                     xhrFields: {
@@ -971,7 +971,7 @@ sap.ui.define([
                     }
                
                     $.ajax({
-                      url: "https://13.215.36.201:50000/b1s/v1/PurchaseRequests",
+                      url: "http://13.229.195.111:50000/b1s/v1/PurchaseRequests",
                       data: JSON.stringify(PurchaseRequest),
                       type: "POST",
                       crossDomain: true,
@@ -989,7 +989,7 @@ sap.ui.define([
                       success: function (json) {  
                       //Patch Here;
                       $.ajax({
-                        url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_INQUIRYDETAILS2&VALUE1=" +  PurchaseRequest.U_APP_PRNo + "&VALUE2=Purchase Request",
+                        url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_INQUIRYDETAILS2&VALUE1=" +  PurchaseRequest.U_APP_PRNo + "&VALUE2=Purchase Request",
                         type: "GET",
                         async: false,
                         beforeSend: function (xhr) {
@@ -1008,7 +1008,7 @@ sap.ui.define([
 
                           for(let x = 0;x < json.length;x++){
                             $.ajax({
-                              url: "https://13.215.36.201:50000/b1s/v1/APP_APRDEC(" + json[x].DocEntry + ")",
+                              url: "http://13.229.195.111:50000/b1s/v1/APP_APRDEC(" + json[x].DocEntry + ")",
                               data: JSON.stringify(approvedDocs),
                               type: "PATCH",
                               crossDomain: true,
@@ -1033,7 +1033,7 @@ sap.ui.define([
                       });
 
                         $.ajax({
-                          url: "https://13.215.36.201:50000/b1s/v1/APP_OPRQ(" + this.DocEntry + ")/Close",
+                          url: "http://13.229.195.111:50000/b1s/v1/APP_OPRQ(" + this.DocEntry + ")/Close",
                           type: "POST",
                           crossDomain: true,
                           xhrFields: {
@@ -1079,7 +1079,7 @@ sap.ui.define([
                   ApprovalPostingBody.U_APP_Depository= this.oModel.getData().ApprovalDecisionRecords[this.iSelectedRow].Depository;
 
                   $.ajax({
-                    url: "https://13.215.36.201:50000/b1s/v1/APP_APRDEC",
+                    url: "http://13.229.195.111:50000/b1s/v1/APP_APRDEC",
                     data: JSON.stringify(ApprovalPostingBody),
                     type: "POST",
                     crossDomain: true,
@@ -1112,7 +1112,7 @@ sap.ui.define([
       }
       else if (DocumentType === "Payment Request") {
         $.ajax({
-          url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_CHECKAPPROVAL&VALUE1=" + No  + "&VALUE2=" + DocumentType +"",
+          url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_CHECKAPPROVAL&VALUE1=" + No  + "&VALUE2=" + DocumentType +"",
           type: "GET",
           async: false,
           beforeSend: function (xhr) {
@@ -1129,10 +1129,10 @@ sap.ui.define([
           context: this
         }).done(function (results) {
           if (results.length===0){
-            var oURL = "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_APPROVALROUTE&VALUE1=" + DocumentType  + "&VALUE2=" + this.oModel.getData().ApprovalDecisionRecords[this.iSelectedRow].Originator + "&VALUE3="+ No +"&VALUE4="+ Level +"";
+            var oURL = "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_APPROVALROUTE&VALUE1=" + DocumentType  + "&VALUE2=" + this.oModel.getData().ApprovalDecisionRecords[this.iSelectedRow].Originator + "&VALUE3="+ No +"&VALUE4="+ Level +"";
             
             $.ajax({
-              url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_APPROVALROUTE&VALUE1=" + DocumentType  + "&VALUE2=" + this.oModel.getData().ApprovalDecisionRecords[this.iSelectedRow].Originator + "&VALUE3="+ No +"&VALUE4="+ Level +"",
+              url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_APPROVALROUTE&VALUE1=" + DocumentType  + "&VALUE2=" + this.oModel.getData().ApprovalDecisionRecords[this.iSelectedRow].Originator + "&VALUE3="+ No +"&VALUE4="+ Level +"",
               type: "GET",
               async: false,
               beforeSend: function (xhr) {
@@ -1151,7 +1151,7 @@ sap.ui.define([
               if (results.length === 0) {
                 this.GetDocEntry(No, DocumentType);
                 $.ajax({
-                  url: "https://13.215.36.201:50000/b1s/v1/APP_ORFP(" + this.DocEntry + ")",
+                  url: "http://13.229.195.111:50000/b1s/v1/APP_ORFP(" + this.DocEntry + ")",
                   type: "GET",
                   crossDomain: true,
                   xhrFields: {
@@ -1245,7 +1245,7 @@ sap.ui.define([
                   }
                 
                   $.ajax({
-                    url: "https://13.215.36.201:50000/b1s/v1/PurchaseInvoices",
+                    url: "http://13.229.195.111:50000/b1s/v1/PurchaseInvoices",
                     data: JSON.stringify(PaymentRequest),
                     type: "POST",
                     crossDomain: true,
@@ -1263,7 +1263,7 @@ sap.ui.define([
                     success: function (json) {
 
                       $.ajax({
-                        url: "https://13.215.36.201:50000/b1s/v1/APP_ORFP(" + this.DocEntry + ")/Close",
+                        url: "http://13.229.195.111:50000/b1s/v1/APP_ORFP(" + this.DocEntry + ")/Close",
                         type: "POST",
                         crossDomain: true,
                         xhrFields: {
@@ -1305,7 +1305,7 @@ sap.ui.define([
 
 
                   $.ajax({
-                    url: "https://13.215.36.201:50000/b1s/v1/APP_APRDEC",
+                    url: "http://13.229.195.111:50000/b1s/v1/APP_APRDEC",
                     data: JSON.stringify(ApprovalPostingBody),
                     type: "POST",
                     crossDomain: true,
@@ -1340,7 +1340,7 @@ sap.ui.define([
       else if (DocumentType === "Inventory Request") {
        try{
         $.ajax({
-          url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_CHECKAPPROVAL&VALUE1=" + No  + "&VALUE2=" + DocumentType +"",
+          url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_CHECKAPPROVAL&VALUE1=" + No  + "&VALUE2=" + DocumentType +"",
           type: "GET",
           async: false,
           beforeSend: function (xhr) {
@@ -1359,7 +1359,7 @@ sap.ui.define([
          
           if (results == 0){
             $.ajax({
-              url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_APPROVALROUTE&VALUE1=" + DocumentType  + "&VALUE2=" + this.oModel.getData().ApprovalDecisionRecords[this.iSelectedRow].Originator + "&VALUE3="+ No +"&VALUE4="+ Level +"",
+              url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_APPROVALROUTE&VALUE1=" + DocumentType  + "&VALUE2=" + this.oModel.getData().ApprovalDecisionRecords[this.iSelectedRow].Originator + "&VALUE3="+ No +"&VALUE4="+ Level +"",
               type: "GET",
               async: false,
               beforeSend: function (xhr) {
@@ -1379,7 +1379,7 @@ sap.ui.define([
               if (results.length == 0) {
                 this.GetDocEntry(No, DocumentType);
                 $.ajax({
-                  url: "https://13.215.36.201:50000/b1s/v1/APP_OIVR(" + this.DocEntry + ")",
+                  url: "http://13.229.195.111:50000/b1s/v1/APP_OIVR(" + this.DocEntry + ")",
                   type: "GET",
                   crossDomain: true,
                   xhrFields: {
@@ -1439,7 +1439,7 @@ sap.ui.define([
                   }
 
                   $.ajax({
-                    url: "https://13.215.36.201:50000/b1s/v1/Drafts",
+                    url: "http://13.229.195.111:50000/b1s/v1/Drafts",
                     data: JSON.stringify(InventoryRequest),
                     type: "POST",
                     crossDomain: true,
@@ -1457,7 +1457,7 @@ sap.ui.define([
                     success: function (json) {
 
                       $.ajax({
-                        url: "https://13.215.36.201:50000/b1s/v1/APP_OIVR(" + this.DocEntry + ")/Close",
+                        url: "http://13.229.195.111:50000/b1s/v1/APP_OIVR(" + this.DocEntry + ")/Close",
                         type: "POST",
                         crossDomain: true,
                         xhrFields: {
@@ -1499,7 +1499,7 @@ sap.ui.define([
 
 
                   $.ajax({
-                    url: "https://13.215.36.201:50000/b1s/v1/APP_APRDEC",
+                    url: "http://13.229.195.111:50000/b1s/v1/APP_APRDEC",
                     data: JSON.stringify(ApprovalPostingBody),
                     type: "POST",
                     crossDomain: true,
@@ -1538,7 +1538,7 @@ sap.ui.define([
     onCheckWithHoldingTax: function(CustCode){
         dWTCode = ""
         $.ajax({
-        url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName=" + jQuery.sap.storage.Storage.get("dataBase") + "&procName=SPAPP_GETTAXLIABLE&VALUE1=" + CustCode,
+        url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName=" + jQuery.sap.storage.Storage.get("dataBase") + "&procName=SPAPP_GETTAXLIABLE&VALUE1=" + CustCode,
         type: "GET",
         async: false,
         beforeSend: function (xhr) {
@@ -1563,7 +1563,7 @@ sap.ui.define([
       this.DocEntry=-1;
       if (DocType === "Purchase Request") {
         $.ajax({
-          url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETDOCENTRY&VALUE1=" + DocNum + "&VALUE2=APP_OPRQ",
+          url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETDOCENTRY&VALUE1=" + DocNum + "&VALUE2=APP_OPRQ",
           type: "GET",
           async: false,
           beforeSend: function (xhr) {
@@ -1587,7 +1587,7 @@ sap.ui.define([
       else if (DocType==="Payment Request")
       {
         $.ajax({
-          url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETDOCENTRY&VALUE1=" + DocNum + "&VALUE2=APP_ORFP",
+          url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETDOCENTRY&VALUE1=" + DocNum + "&VALUE2=APP_ORFP",
           type: "GET",
           async: false,
           beforeSend: function (xhr) {
@@ -1611,7 +1611,7 @@ sap.ui.define([
       }
       else if(DocType==="Inventory Request"){
         $.ajax({
-          url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETDOCENTRY&VALUE1=" + DocNum + "&VALUE2=APP_OIVR",
+          url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETDOCENTRY&VALUE1=" + DocNum + "&VALUE2=APP_OIVR",
           type: "GET",
           async: false,
           beforeSend: function (xhr) {
@@ -1641,7 +1641,7 @@ sap.ui.define([
         var oNotes = Notes.replace(/[^a-zA-Z ]/g, "")
       }
    
-      var rURL = "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_SETREJECT&VALUE1=" + DocNum + "&VALUE2=" + DocType + "&VALUE3=" + oNotes + "";
+      var rURL = "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_SETREJECT&VALUE1=" + DocNum + "&VALUE2=" + DocType + "&VALUE3=" + oNotes + "";
       $.ajax({
         url: rURL,
         type: "GET",
@@ -1667,7 +1667,7 @@ sap.ui.define([
       });
     },
     ongetAllDocReject: function(DocNum,DocType){
-      var rURL = "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETREJECTDOC&VALUE1=" + DocNum + "&VALUE2=" + DocType;
+      var rURL = "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETREJECTDOC&VALUE1=" + DocNum + "&VALUE2=" + DocType;
       $.ajax({
         url: rURL,
         type: "GET",
@@ -1686,7 +1686,7 @@ sap.ui.define([
           rejectedDoc.U_APP_Status2 = "Rejected";
           for(let i = 0;i < json.length;i++){
             $.ajax({
-              url: "https://13.215.36.201:50000/b1s/v1/APP_APRDEC(" + json[i].DocEntry + ")",
+              url: "http://13.229.195.111:50000/b1s/v1/APP_APRDEC(" + json[i].DocEntry + ")",
               data: JSON.stringify(rejectedDoc),
               type: "PATCH",
               crossDomain: true,

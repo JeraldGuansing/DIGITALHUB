@@ -70,7 +70,7 @@ sap.ui.define([
           this.getView().byId("doctype").setValue("Purchase Request");
           this.oModel.refresh();
 
-          var urlString = "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETRECORDS2&VALUE1=" + this.getView().byId("doctype").getSelectedKey();
+          var urlString = "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETRECORDS2&VALUE1=" + this.getView().byId("doctype").getSelectedKey();
           $.ajax({
             url: urlString,
             type: "GET",
@@ -105,7 +105,7 @@ sap.ui.define([
 
                   var oDetails = [];
                   $.ajax({
-                    url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=spApp_GetRecords_Details&VALUE1=" + this.getView().byId("doctype").getSelectedKey() + "&VALUE2="+ results[i].DocNum +"",
+                    url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=spApp_GetRecords_Details&VALUE1=" + this.getView().byId("doctype").getSelectedKey() + "&VALUE2="+ results[i].DocNum +"",
                     type: "GET",
                     async: false,
                     beforeSend: function (xhr) {
@@ -182,7 +182,7 @@ sap.ui.define([
   
           this.oModel.getData().ApprovalInquiryRecords = [];
           $.ajax({
-            url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=spApp_GetRecords_Details&VALUE1=&VALUE2="+ this.getView().byId("filters").getSelectedKey() +"&VALUE3="+ this.getView().byId("doctype").getSelectedKey() +"",
+            url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=spApp_GetRecords_Details&VALUE1=&VALUE2="+ this.getView().byId("filters").getSelectedKey() +"&VALUE3="+ this.getView().byId("doctype").getSelectedKey() +"",
             type: "GET",
             async: false,
             beforeSend: function (xhr) {
@@ -214,7 +214,7 @@ sap.ui.define([
         onFilter: function(){
           this.oModel.getData().PurchaseRequestRecords = [];
           this.oModel.refresh();
-          var urlString = "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETRECORDS2&VALUE1=" + this.getView().byId("doctype").getSelectedKey();
+          var urlString = "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=SPAPP_GETRECORDS2&VALUE1=" + this.getView().byId("doctype").getSelectedKey();
           $.ajax({
            url: urlString,
            type: "GET",
@@ -254,7 +254,7 @@ sap.ui.define([
 
                  var oDetails = [];
                  $.ajax({
-                   url: "https://13.215.36.201:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=spApp_GetRecords_Details&VALUE1=" + this.getView().byId("doctype").getSelectedKey() + "&VALUE2="+ results[i].DocNum +"",
+                   url: "http://13.229.195.111:4300/app_xsjs/ExecQuery.xsjs?dbName="+ jQuery.sap.storage.Storage.get("dataBase") +"&procName=spApp_GetRecords_Details&VALUE1=" + this.getView().byId("doctype").getSelectedKey() + "&VALUE2="+ results[i].DocNum +"",
                    type: "GET",
                    async: false,
                    beforeSend: function (xhr) {
